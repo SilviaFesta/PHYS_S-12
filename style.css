@@ -4,8 +4,9 @@ body {
     color: black;
   }
 
-p {font-size: 16px;}
-.margin {margin-bottom: 15px;}
+p {font-size: 16px; color: black}
+.margin {margin-bottom: 15px;} 
+
 
 .container-fluid {
   padding: 30px;
