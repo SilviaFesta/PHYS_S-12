@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+      <html>
+      <head>
+            <title>  assignment2  </title>
+
+             <meta charset="utf-8">
+             <meta name="viewport" content="width=device-width, initial-scale=1">
+             <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+             <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+             <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script> 
+             <link href="./style.css" rel="stylesheet">
+
+      </head>
+      <body class="margin"> 
+            <h1 class="text-center"> <b> Assigment 2: electronic Basics and Microcontroller ntro </b> </h1>
+            <h4> <b> RESISTORS </b> </h4>
+            <p> Resistors are circuits elements that dissipate power, inside of them there is a voltage drop that is proportional to the resistance of the resistor. the resistance of a resistor can be measured with a multimeter: </p>
+
+             <h4>  How to read the stripes on a resistor to know it's resistance </h4>
+
+            <img src="01_intro/components.jpg" class="img-responsive margin" style="width:70%" alt="components">
+
+            
+
+            <h4>  RESISTORS IN SERIES AND RESISTORS IN PARALLEL: </h4>
+
+            <p> Two resistor are in parallel when across them there is the same voltage drop, while two resistors are in series when the same current flows across them: </p>
+
+            
+
+            <p> A wire of a circuit can be considered as a perfect conductor. in perfect conductors electric potential is uniformly distribuited, therefore the electric potential will be the same in each point of the wire. So when are two resistor in parallel? The drop in voltage inside them must be the same, which means that the ends of the two resistors must be connected to the same wires:</p>
+
+            <img src="./voltage_drop_parallel.pgn" class="img-responsive margin" style="width:70%" alt="voltage_drop_parallel">
+
+            <p> here are some exaples: </p>
+            <img src="./circuit_parallel1.pgn" class="img-responsive margin" style="width:70%" alt="circuit_parallel1">
+
+           
+           <p> When are two resistor in series? two resistors are in series when the current that flows through one must flow trough the other. Current is the amount of charge that flows per unit of time. we can think of current flowing through a circuit as water flowing through pipes. If there is a junction, all the current that goes in the junction must go out, therefore if one wire devides into two the curents inside the two wires must be less than the current in the first wire  (i=i1+i2). So two resistors are in series if all the current that comes from the first resistor goes into the second without being divided by a junction: </p>
+
+             <img src="./curr_serie.pgn" class="img-responsive margin" style="width:70%" alt="curr_serie">
+             
+            <p> here are some exaples: </p>
+
+            <img src="./circuit_series1.pgn" class="img-responsive margin" style="width:70%" alt="circuit_series1">
+            <img src="./circuit_series2.pgn" class="img-responsive margin" style="width:70%" alt="circuit_series2"><img src="./circuit_series3.pgn" class="img-responsive margin" style="width:70%" alt="circuit_series3">
+
+             <h4>  POTENTIOMETER </h4>
+
+              <P> A potentiometer is a circuit element that is similiar to a resistor because it dissipate power, but has three terminal. The voltage drop can be devided between the two termials: it works like two resistor in parallel in witch you can cange the resistance as you prefer keeping the equivalent resistance (R1+R2) constant. here is my circuit with a potentiometer: </P>
+
+
+           <img src="./potentiometer1.png" class="img-responsive margin" style="width:70%" alt="potentiometer1">
+          <img src="./potentiometer2.png" class="img-responsive margin" style="width:70%" alt="potentiometer2">
+          <img src="./potentiometer3.png" class="img-responsive margin" style="width:70%" alt="potentiometer3">
+          <img src="./potentiometer4.png" class="img-responsive margin" style="width:70%" alt="potentiometer4">
+          <img src="./potentiometer5.png" class="img-responsive margin" style="width:70%" alt="potentiometer5">
+
+              <p> i have created a circuit with the potentiometer and run the arduino examle program "AnalogReadSeries" to reed the different values of the voltage </p>
+
+               
+            <img src="./potentiometer_program2.png" class="img-responsive margin" style="width:70%" alt="potentiometer_program2">
+
+            <p> To read the values see the voltage changing i have changed the program so that the interval between two value was 0,5 seconds instead of 1 millisecond </p>
+
+            <img src="./potentiometer_program1.png" class="img-responsive margin" style="width:70%" alt="potentiometer_program1">
+            <img src="./potentiometer_voltage1.png" class="img-responsive margin" style="width:70%" alt="potentiometer_voltage1">
+
+            <p> The values of the voltage (between 0 and 3.3V) were rescaled from 0 to 1024, threfore I changed the program to obtain the actual values </p>
+
+            <img src="./potentiometer_program3.png" class="img-responsive margin" style="width:70%" alt="potentiometer_program3">
+            <img src="./potentiometer_voltage2.png" class="img-responsive margin" style="width:70%" alt="potentiometer_voltage2">
+
+            <p> Here are some photos of the circuit and the measure that I have taken with the multimeter"
+
+            <h4>  LIGHTING AN LED </h4>
+            <p> The LED has two leads of different lenghts, the longer one is the anode and the shorter one is the cathode. Current flows from the anode to the cathode therefore to light an LED you must connect the anode tho the higher potential and the cathode to the lowest potential. if the voltage drop is bigger  the LED is brither, if the voltage drop is smaller the LED is less bright </p>
+             <img src="01_intro/extrude1.png" class="img-responsive margin" style="width:70%" alt="extrude1">
+              <img src="01_intro/extrude2.png" class="img-responsive margin" style="width:70%" alt="extrude2"> 
+              <img src="01_intro/extrude3.png" class="img-responsive margin" style="width:70%" alt="extrude3"> 
+              <img src="01_intro/extrude4.png" class="img-responsive margin" style="width:70%" alt="extrude4">
+              <img src="01_intro/extrude5.png" class="img-responsive margin" style="width:70%" alt="extrude5">
+
+             
+             <p>After all the components were ready I created this assembly: </p>
+             <img src="01_intro/assembly1.png" class="img-responsive margin" style="width:70%" alt="assembly1">
+             <img src="01_intro/assembly2.png" class="img-responsive margin" style="width:70%" alt="assembly2">
+             <img src="01_intro/assembly3.png" class="img-responsive margin" style="width:70%" alt="assembly3">
