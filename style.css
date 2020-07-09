@@ -1,22 +1,40 @@
 body {
     font: 20px Montserrat, sans-serif;
     line-height: 1.8;
-    color: black;
+    color: white;
   }
 
 
-p {font-size: 16px; color: black}
+p {font-size: 16px; color: white}
 
- .margin {
-          margin-top: 100px;
+.margin {
+          margin-top: 60px;
           margin-bottom: 100px;
      	  margin-right: 150px;
-      	  margin-left: 80px;
-		}
-
-
+      	  margin-left: 60px;
+}
+.column{
+  float: left;
+  width: 50%;
+}
 .container-fluid {
   padding: 30px;
   padding-bottom: 70px;
 }
-
+header{
+  text-align: left;
+  color: white;
+  text-shadow: 2px 2px #bdc3c7;
+  }
+div.absolute {
+   position: absolute;
+   width: 22%;
+   right: 39%;
+   bottom: 10px;
+    text-align: center;
+    border-style: solid;
+  border-color: white;
+ }
+ body{
+background-color: #74b9ff;
+}
