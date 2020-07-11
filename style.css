@@ -24,7 +24,7 @@ p {font-size: 16px; color: white}
 header{
   text-align: left;
   color: white;
-  text-shadow: 2px 2px #bdc3c7;
+  text-shadow: 4px 2px black;
   }
 div.absolute {
    position: absolute;
@@ -33,8 +33,40 @@ div.absolute {
    bottom: 10px;
     text-align: center;
     border-style: solid;
-  border-color: white;
+  border-color:  #66ff33;
+  border-width: thin;
+  background-color: black;
+
  }
  body{
 background-color: #74b9ff;
+}
+
+.round_img {
+  border-radius: 50%;
+
+}
+.vertical-center1 {
+ margin: 0;
+  position: absolute;
+  top: 50%;
+  -ms-transform: translateY(-40%);
+  transform: translateY(-40%);
+  -ms-transform: translateX(25%);
+  transform: translateX(25%)
+}
+
+.vertical-center2 {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  -ms-transform: translateY(-40%);
+  transform: translateY(-40%);
+  -ms-transform: translateX(85%);
+  transform: translateX(85%)
+}
+
+img {
+  margin-left: auto;
+  margin-right: auto;
 }
