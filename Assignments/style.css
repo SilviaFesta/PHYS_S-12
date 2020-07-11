@@ -2,7 +2,7 @@ body {
     font: 20px Montserrat, sans-serif;
     line-height: 1.8;
     color: white;
-    background-color: #74b9ff;
+    
   }
 
 
@@ -11,8 +11,8 @@ p {font-size: 16px; color: white}
 .margin {
           margin-top: 60px;
           margin-bottom: 100px;
-     	  margin-right: 150px;
-      	  margin-left: 60px;
+        margin-right: 150px;
+          margin-left: 60px;
 }
 .column{
   float: left;
@@ -22,10 +22,20 @@ p {font-size: 16px; color: white}
   padding: 30px;
   padding-bottom: 70px;
 }
+
+.container {
+  position: relative;
+  width: 80%;
+}
+
+.row {
+  padding-bottom: 100px;  
+}
+
 header{
   text-align: left;
   color: white;
-  text-shadow: 2px 2px black;
+  text-shadow: 4px 2px black;
   }
 div.absolute {
    position: absolute;
@@ -34,14 +44,87 @@ div.absolute {
    bottom: 10px;
     text-align: center;
     border-style: solid;
-  border-color:  #00cc00;
- }
+  border-color:  #66ff33;
+  border-width: thin;
+  background-color: black;
 
-.vertical-center {
-  margin: 0;
-  position: absolute;
-  top: 50%;
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%);
+ }
+ body{
+background-color: black;
 }
 
+.round_img {
+  border-radius: 5%;
+  display: block;
+  width: 100%;
+  height: auto;
+
+}
+
+.vertical-center1 {
+ margin: 0;
+  position: absolute;
+  top: 35%;
+  -ms-transform: translateX(35%);
+  transform: translateX(35%)
+}
+
+.vertical-center2 {
+  margin: 0;
+  position: absolute;
+  top: 35%;
+  -ms-transform: translateX(65%);
+  transform: translateX(65%)
+}
+
+.button {
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+
+
+.image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.overlay {
+  position: absolute;
+  border-radius: 5%;
+  top: 0;
+  bottom: 0;
+  left: 18px;
+  right: 0;
+  height: 100%;
+  width: 92%;
+  opacity: 0;
+  transition: .5s ease;
+  background-color: #AAAAAA;
+}
+
+.container:hover .overlay {
+  opacity: 0.9;
+}
+
+.text {
+  color: black;
+  font-size:30px;
+  font-style: bold;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  opacity: 1;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
