@@ -13,8 +13,29 @@
 </head>
 <body style="background-image: url('../background2.jpg'); background-repeat: no-repeat;  background-attachment: fixed;
 background-size: cover;" class="margin">
+<div id="myNav" class="overlay2">
+  <a href="javascript:void(0)" class="closebtn2" onclick="closeNav()">&times;</a>
+  <div class="overlay-content2">
+    <a href="../01_intro/about.html">About</a>
+    <a href="../index.html">Home</a>
+    <a href="../01_intro/final_project.html">Final Project</a>
+  </div>
+</div>
+
+
+
+<script>
+function openNav() {
+  document.getElementById("myNav").style.height = "100%";
+}
+
+function closeNav() {
+  document.getElementById("myNav").style.height = "0%";
+}
+</script>
+
 <header>
-  <h1>PHYS S-12: <br>Introduction <br>to Digital Fabrication</h1>
+  <h1>PHYS S-12: <span style="font-size:40px;cursor:pointer; background-color: black; float: right;" onclick="openNav()">&#9776; MENU </span> <br>Introduction <br>to Digital Fabrication</h1>
 </header>
 <hr>
 
