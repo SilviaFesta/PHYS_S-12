@@ -5,27 +5,146 @@
 
              <meta charset="utf-8">
              <meta name="viewport" content="width=device-width, initial-scale=1">
+             <script src = "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js"></script>
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/default.min.css">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/arduino-light.min.css">
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/languages/arduino.min.js"></script>
+            <script>hljs.initHighlightingOnLoad();</script>
+
              <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
              <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
              <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script> 
-             <link href="./style.css" rel="stylesheet">
+             <link href="./style2.css" rel="stylesheet">
 
       </head>
 
       <body class = "margin">
 
-            <h1 class="text-center"> <b> Topic 5: Programmable electronics </b> </h1>
+            <h1 class="text-center" style="font: tex-gyre-schola"> <b> Topic 5: Programmable electronics </b> </h1>
+            <br>
+            <br>
 
             <p> In this lecture we have learnt to use conditionals and loops.
             I have first crated a program with conditional statements. To write this program I followed the "StateChangeDetection" example and changed the code to make two led light instead of one so that when the button had been pressed an even number of times one led turns on and the other turns on when the button has been pressed an odd number of times. </p>
             <p>This is the example program I have used: </p>
-<img src="../4program1.png" class="igm-responsive margin" style="width:70%" alt="4program1">
+
+<pre>
+      <code class="language-arduino" style= "font-size: 12px">
+
+// this constant won't change:
+const int  buttonPin = 2;    // the pin that the pushbutton is attached to
+const int ledPin = 13;       // the pin that the LED is attached to
+
+// Variables will change:
+int buttonPushCounter = 0;   // counter for the number of button presses
+int buttonState = 0;         // current state of the button
+int lastButtonState = 0;     // previous state of the button
+
+void setup() {
+  // initialize the button pin as a input:
+  pinMode(buttonPin, INPUT);
+  // initialize the LED as an output:
+  pinMode(ledPin, OUTPUT);
+  // initialize serial communication:
+  Serial.begin(9600);
+}
+
+
+void loop() {
+  // read the pushbutton input pin:
+  buttonState = digitalRead(buttonPin);
+
+  // compare the buttonState to its previous state
+  if (buttonState != lastButtonState) {
+    // if the state has changed, increment the counter
+    if (buttonState == HIGH) {
+      // if the current state is HIGH then the button went from off to on:
+      buttonPushCounter++;
+      Serial.println("on");
+      Serial.print("number of button pushes: ");
+      Serial.println(buttonPushCounter);
+    } else {
+      // if the current state is LOW then the button went from on to off:
+      Serial.println("off");
+    }
+    // Delay a little bit to avoid bouncing
+    delay(50);
+  }
+  // save the current state as the last state, for next time through the loop
+  lastButtonState = buttonState;
+
+
+  // turns on the LED every four button pushes by checking the modulo of the
+  // button push counter. the modulo function gives you the remainder of the
+  // division of two numbers:
+  if (buttonPushCounter % 4 == 0) {
+    digitalWrite(ledPin, HIGH);
+  } else {
+    digitalWrite(ledPin, LOW);
+  }
+
+}
+</code>
+</pre>
+
+
+
 
 <p> This is the progam I have written: </p> 
 
-<img src="../4program2.png" class="igm-responsive margin" style="width:70%" alt="4program2">
+
+<pre>
+      <code class="language-arduino">
+            // constants
+const int led_red = 4;
+const int led_blue = 11;
+const int button_pin = 5;
+
+// variables
+int  b_push = 0; // number of pushes
+int  b_state = 0; // button state
+int last_b_state = 0 ; // previous button state
+
+void setup()
+{
+  pinMode (led_red, OUTPUT);
+  pinMode (led_blue, OUTPUT);
+  pinMode (button_pin, INPUT);
+}
+
+void loop() {
+  b_state = digitalRead (button_pin);
+  if (b_state != last_b_state) {
+    if (b_state == HIGH) {
+      b_push ++ ;
+    }
+    delay (100);
+    last_b_state = b_state;
+  }
+
+  // if the total number of pushes is even turn on the red LED.
+  if (b_push % 2 == 0)
+  {
+    digitalWrite (led_red, HIGH);
+    digitalWrite (led_blue, LOW);
+    delay (50);
+  }
+
+  // if the total number of pushes is even turn on the blue LED.
+  if (b_push % 2 == 1) 
+  {
+    digitalWrite (led_blue, HIGH);
+    digitalWrite (led_red, LOW);
+    delay (50);
+  }
+delay(50);
+}
+      </code>
+</pre>
+
 
 <p> This is my circuit: <p>
+
 
  <img src="../4circuit1png.jpeg" class="igm-responsive margin" style="width:70%" alt="4circuit1">
 
@@ -33,10 +152,64 @@
  <video controls style="width:50%; min-width:300px" >
       <source src="../Video.mov" type="video/mp4">
 </video>
+<br>
+<br>
 
-<p> than i added nested conditional statement to make the LED turn on only when the button was pressed: </p>
+<p> Than I added nested conditional statement to make the LED turn on only when the button was pressed: </p>
+ <pre class="language-arduino">
+      <code>
+            // constants
+const int led_red = 4;
+const int led_blue = 11;
+const int button_pin = 5;
 
-<img src="../4program3.png" class="igm-responsive margin" style="width:70%" alt="4program3">
-<video controls style="width:50%; min-width:300px" >
+// variables
+int  b_push = 0; // number of pushes
+int  b_state = 0; // button state
+int last_b_state = 0 ; // previous button state
+
+void setup()
+{
+  pinMode (led_red, OUTPUT);
+  pinMode (led_blue, OUTPUT);
+  pinMode (button_pin, INPUT);
+}
+
+void loop() {
+  b_state = digitalRead (button_pin);
+  if (b_state != last_b_state) {
+    if (b_state == HIGH) {
+      b_push ++ ;
+    }
+    delay (100);
+    last_b_state = b_state;
+  }
+
+  //if the button is pushed ...
+  if (b_state == LOW) {
+    // ... and it has been pushed an even number of times, turn on the red LED
+    if (b_push % 2 == 0)  {
+      digitalWrite (led_red, HIGH);
+      digitalWrite (led_blue, LOW);
+    }
+
+    // ... and it has been pushed an odd number of times, turn on the blue LED
+    if (b_push % 2 == 1)  {
+      digitalWrite (led_blue, HIGH);
+      digitalWrite (led_red, LOW);
+    }
+
+  } // if the  button is not pushed turn off the LEDs
+  else {
+    digitalWrite (led_blue, LOW);
+    digitalWrite (led_red, LOW);
+  }
+  delay (
+      </code>
+</pre>
+
+
+<p> Here is a video of the board running the code </p>
+<video controls style="width:50%; min-width:300px; align-content: center;" >
       <source src="../video2.mov" type="video/mp4">
 </video>
