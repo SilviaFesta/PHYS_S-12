@@ -11,9 +11,32 @@
 	<link href="./style.css" rel="stylesheet">
 </head>
 <body class="margin" style="background-color: #80aaff">
+
+	<div id="myNav" class="overlay2">
+  <a href="javascript:void(0)" class="closebtn2" onclick="closeNav()">&times;</a>
+  <div class="overlay-content2">
+    <a href="../index.html">Home</a>
+    <a href="../Assignments/Silvia.html">Assignments</a>
+    <a href="../01_intro/final_project.html">Final Project</a>
+  </div>
+</div>
+
+
+
+<script>
+function openNav() {
+  document.getElementById("myNav").style.height = "100%";
+}
+
+function closeNav() {
+  document.getElementById("myNav").style.height = "0%";
+}
 	
+	</script>
+
+
 	<header>
-		<h1> <b style="text-shadow-color: #6666ff"> ABOUT ME  </b> </h1>
+		<h1> <b style="font-family: "> ABOUT ME  </b> <span style="font-size:40px;cursor:pointer; float: right;" onclick="openNav()">&#9776; MENU </span>  </h1>
 	</header>
 	<hr>
 	<div class=row>
