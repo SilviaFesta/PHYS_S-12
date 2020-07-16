@@ -1,0 +1,140 @@
+<DOCTYPE html>
+  <html>
+  <head>
+    <title>  assignment7  </title>
+
+       <meta charset="utf-8">
+             <meta name="viewport" content="width=device-width, initial-scale=1">
+             <script src = "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js"></script>
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/default.min.css">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/arduino-light.min.css">
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/languages/arduino.min.js"></script>
+            <script>hljs.initHighlightingOnLoad();</script>
+
+             <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+             <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+             <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script> 
+             <link href="./style2.css" rel="stylesheet">
+
+
+  </head>
+
+  <body class="margin"> 
+    <h1 class="text-center"> <b> Topic 7: Electronic input devices</b> </h1>
+    <br>
+    <br>
+    <h4> <b> IR PHOTOTRANSISTOR </b></h4>
+ <ul>
+      <li><h4> SENSOR 1: detecting the dis</h4>  </li> </ul>
+    <div class="container-fluid bg-3">
+      <p> For my final project I need a sensor that can detect obstacles so I decided to create a sensor that is able to detect the presence of an obstacle and one that detects the distance of the obstacle. To crate those sensors I have used the infrared phototransistor present in our kit and an infrared led. <br> To build the circuit I have followed the scheme present on our course webpage. However I have changed many resistors until I have found the values of resistance that best allow to read a clear signal.  
+        <br> <br> </p>
+
+         <p> this is my circuit: <p>
+       
+        <img src="./assign6/circuit1.jpeg" class="img-responsive margin" style="width:60%" alt="image0">
+
+        <p> Firstly I have written a simple arduino program to read the values of the phototransistor: </p>
+        <pre>
+        <code class= "language-arduino" >
+          void setup() {
+          Serial.begin(9600); 
+          pinMode(A0, INPUT); // set A0 as the input pin                           
+          }
+
+         void loop() {
+        int a=analogRead(A0); // read the values of the phototransistor
+        Serial.println(a); // print those values
+        delay(100);                                     
+        }
+        </code>
+      </pre>
+       <p> This program seemd not to work but after many tries I have discovered why: <br>
+           1) The phototransistor was detecting infrared light from the sun <br> SOLUTION: close the window blinds <br>
+           2) the phototransistor was detecting infrared ligth from my computer <br> SOLUTION: Move the circuit as far as possible from the computer <br>
+           3) The phototransistor detected infrared ligth beams directly from the LED instead of the reflected ones <br> SOLUTION: cover both the phototransistor and the led with a pice of a staw so that all the light from the led would have been directed up and the phototransistor would only detect the reflected light: </p>
+           <div class="row">
+            <div class="column" >
+           <img src="./assign6/led1.jpeg" class="img-responsive margin" style="width:60%; border-color: black" alt="image0">
+         </div>
+         <div class="column" >
+           <img src="./assign6/led2.jpeg" class="img-responsive margin" style="width:60%; border-color: black" alt="image0">
+         </div>
+         </div>
+         <p> 4) Not even this solution seemed to work because the straw was transparent to infrared light so I covered the pices of stow with insulant tape. <br> After this my sensor finally worked </p>
+
+         <img src="./assign6/led3.jpeg" class="img-responsive margin" style="width:60%;" alt="image0">
+          <img src="./assign6/sensor_values.png" class="img-responsive margin" style="width:90%" alt="image0">
+
+         <p> So I started taking datas: I used a meter to see what was the detected value when an obstacle was placed at different distances <p>
+
+
+       
+         <img src="./assign6/measurements.jpeg" class="img-responsive margin" style="width:60%" alt="image1">
+      
+      <p> This are the datas I got: </p>
+      <img src="./assign6/tabella.png" class="img-responsive margin" style="width:60%" alt="image1">
+
+       
+<ul>
+      <li><h4> SENSOR 2: detecting the presence of an obstacle </h4>  </li> </ul>
+      <p> to detect only the presence of an obstacle I pointed the led straght to the phototransistor so that when there are no obstacle between the led and the phototransistor the phototransistor woul read very high values and when an obstacle blocks the infrared light beams the phototransistor would detect very low values (I have used the same simple arduino program as for sensor 1):<p>
+        
+
+<div class="row">
+            <div class="column" >
+           <img src="./assign6/sensore.jpeg" class="img-responsive margin" style="width:60%; border-color: black" alt="image0">
+         </div>
+         <div class="column" >
+           <img src="./assign6/sensor values1.png" class="img-responsive margin" style="width:100%; border-color: black" alt="image0">
+         </div>
+
+         <div class="row">
+            <div class="column" >
+           <img src="./assign6/sensore2.jpeg" class="img-responsive margin" style="width:60%; border-color: black" alt="image0">
+         </div>
+         <div class="column" >
+           <img src="./assign6/sensor_values2.png" class="img-responsive margin" style="width:100%; border-color: black" alt="image0">
+         </div>
+
+         <p> So I wrote this arduino program:
+          <pre>
+            <code class="language-arduino">
+
+void setup() {
+  Serial.begin(9600); 
+  pinMode(A0, INPUT);                            
+}
+void loop() {
+ int a=analogRead(A0);
+ if (a > 100 ){
+  Serial.println("No obstacle");
+  }
+  else {
+    Serial.println("Obstacle detected");
+    }
+
+  delay(100);                                     
+}
+            </code>
+          </pre>
+
+           <div class="column" >
+           <img src="./assign6/sensore.jpeg" class="img-responsive margin" style="width:60%; border-color: black" alt="image0">
+         </div>
+         <div class="column" >
+           <img src="./assign6/no_obstacle.png" class="img-responsive margin" style="width:100%; border-color: black" alt="image0">
+         </div>
+
+         <div class="row">
+            <div class="column" >
+           <img src="./assign6/sensore2.jpeg" class="img-responsive margin" style="width:60%; border-color: black" alt="image0">
+         </div>
+         <div class="column" >
+           <img src="./assign6/detected.png" class="img-responsive margin" style="width:60%; border-color: black" alt="image0">
+         </div>
+
+
+
+   </body>
+   </html>
