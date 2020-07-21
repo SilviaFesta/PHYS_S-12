@@ -1,0 +1,284 @@
+<DOCTYPE html>
+  <html>
+  <head>
+    <title>  assignment7  </title>
+
+<meta charset="utf-8">
+             <meta name="viewport" content="width=device-width, initial-scale=1">
+             <script src = "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js"></script>
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/default.min.css">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/arduino-light.min.css">
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/languages/arduino.min.js"></script>
+            <script>hljs.initHighlightingOnLoad();</script>
+
+             <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+             <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+             <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script> 
+             <link href="./style2.css" rel="stylesheet">
+  </head>
+
+  <body class="margin"> 
+    <h1 class="text-center"> <b> Topic 8:  Electronic output devices </b> </h1>
+    <br>
+    <br>
+
+      <p> During class we learnt how to controll buzzers and LED strips and how to run stepper motors and servo motors. For this week assignement I decided to build a small machine run with two stepper motors, which will be part of my final project.   </p> 
+      <br>
+      <p> I needed my machine to have four wheels in order to be as stable as possible because in my final project the machine will need to carry other objects; since I didn't whant to use too many motors I decided to have the two front wheels connected to motors and leve the back two wheels free to move. </p>
+    <div class="container-fluid bg-3">
+      
+       
+        <img src="./assign7/machine.jpeg" class="img-responsive margin" style="width:60%" alt="git1">
+
+        <p> I connected the two stepper motors to my Metro board and I wrote an arduino program to run both of them: </p>
+        <pre>
+          <code class="arduino-language" >
+
+
+                            #include < Stepper.h >
+
+                            const int stepsPerRevolution = 200;  
+
+                            Stepper myStepper1(stepsPerRevolution, 8, 9, 10, 11);
+                            Stepper myStepper2(stepsPerRevolution, 3, 4, 5, 6);
+
+                            void setup() {
+
+                             // set the speed at 80 rpm:
+                             myStepper.setSpeed(80);
+                             // initialize the serial port:
+                             Serial.begin(9600);
+                            }
+
+                            void loop() {
+
+                            myStepper.step(400);
+  
+                            myStepper.step(400);
+                            delay(10);
+
+ 
+                            }
+</code>
+</pre>
+
+       
+       <p> However arduino can not do run the two motors at the same time so this is what happened: </p>
+
+
+        <video controls style="width:50%; min-width:300px; align-items: center;" >
+            <source src="./assign7/motors.mov" type="video/mp4">
+
+        </video> 
+
+
+        <br>
+        <br>
+
+ <p> So I changed the program to make each motor go for one step and changed the delay to make it very small. In this way the rotation of the motors is so fast that it seems like both motors were moving continuously.
+ <br> This is my new program: </p>
+
+
+                <pre>
+          <code class="arduino-language" >
+
+
+#include < Stepper.h >
+const int stepsPerRevolution = 200;  
+
+// initialize the stepper library 
+Stepper myStepper1(stepsPerRevolution, 8, 9, 10, 11);
+Stepper myStepper2(stepsPerRevolution, 3, 4, 5, 6);
+
+
+
+void setup() {
+  // set the speed 
+  myStepper1.setSpeed(80);
+   myStepper2.setSpeed(80);
+  Serial.begin(9600);
+
+}
+
+void loop() {
+
+  myStepper2.step(1), myStepper1.step(1); 
+ //one step clockwise
+ 
+  delay(1);
+
+ }
+</code>
+</pre>
+
+  <img src="./assign7/image.gif" class="img-responsive margin" style="width:30%" alt="git2">
+      
+<p> When I put my motors inside the box I noticed that they were placed in opposite direction so one was running clockwise and the other counterclockwise so I had to change the program again:
+
+
+
+                <pre>
+          <code class="arduino-language" >
+
+
+#include < Stepper.h >
+const int stepsPerRevolution = 200;  
+
+// initialize the stepper library 
+Stepper myStepper1(stepsPerRevolution, 8, 9, 10, 11);
+Stepper myStepper2(stepsPerRevolution, 3, 4, 5, 6);
+
+
+
+void setup() {
+  // set the speed 
+  myStepper1.setSpeed(80);
+   myStepper2.setSpeed(80);
+  Serial.begin(9600);
+
+}
+
+void loop() {
+
+  myStepper2.step(1), myStepper1.step(-1); 
+ //one step clockwise
+ 
+  delay(1);
+
+ }
+</code>
+</pre>
+<br>
+<p> This time the motors were running correctly so built my machine using a cardboard box, some wood sticks (to keep the motors in the correct position), insulant tape and a straw. </p>
+
+       
+       
+         <img src=".assign7/build.jpeg" class="img-responsive margin" style="width:60%" alt="git3">
+<p> I had used 5 volts to pwer my stepper motors and when I started the machine I saw that the motors were not able to move the wheels because the machine was to eavy. <br> So I looked at the datashhet to understand if there was something wrong with my circuit. <br> <p>
+
+       
+
+    
+    
+       
+         <img src="./assign7/datasheet.png" class="img-responsive margin" style="width:60%" alt="git4">
+
+        <p> Lookign at the datasheet i discovered that the recommended voltage for this motor was 12 Volts so I needed more power to correctly run the motors, since I wasn't sure if 12 Volt were too much for the metro board I solved the problem by connecting to my circuit two powerbancks in series: <p>
+       
+       
+         <img src="./assign7/adaptor.jpeg" class="img-responsive margin" style="width:60%" alt="git5">
+       <p> This is my final circuit: <p> 
+       
+         <img src="./assign7/circuit.jpeg" class="img-responsive margin" style="width:60%" alt="git6">
+       <p> In this video You can see my machine working: </p>
+
+       <video controls style="width:50%; min-width:300px; align-items: center;" >
+            <source src="./assign7/moving.mov" type="video/mp4">
+
+
+        </video> 
+
+        <br>
+        <br>
+
+        <p> Here are some arduino program to make the machine move in different directions: <p>
+
+           <pre>
+          <code class="arduino-language" >
+            // THIS PROGRAM MAKES THE MACHINE MOVE FORWARD AND BACK
+
+#include < Stepper.h >
+
+const int stepsPerRevolution = 200;  
+
+// initialize the stepper library 
+Stepper myStepper1(stepsPerRevolution, 8, 9, 10, 11);
+Stepper myStepper2(stepsPerRevolution, 3, 4, 5, 6);
+
+
+
+void setup() {
+  // set the speed 
+  myStepper1.setSpeed(80);
+   myStepper2.setSpeed(80);
+  Serial.begin(9600);
+
+}
+
+void loop() {
+  // step one revolution  in one direction:
+
+ if (millis()%10000 > 5000  ) {
+ 
+  myStepper2.step(1), myStepper1.step(-1); 
+ //move forward
+ 
+  delay(1);
+ }
+ else {
+ 
+  myStepper2.step(-1), myStepper1.step(1); 
+ //turn
+ 
+  delay(1);
+ }
+
+ 
+
+ }
+</code>
+</pre>
+
+     <pre>
+          <code class="arduino-language" >
+
+// THIS PROGRAM MAKES THE MACHINE TURN EVERY SIX SECONDS
+
+#include < Stepper.h >
+const int stepsPerRevolution = 200;  
+
+// initialize the stepper library 
+Stepper myStepper1(stepsPerRevolution, 8, 9, 10, 11);
+Stepper myStepper2(stepsPerRevolution, 3, 4, 5, 6);
+
+
+
+void setup() {
+  // set the speed 
+  myStepper1.setSpeed(80);
+   myStepper2.setSpeed(80);
+  Serial.begin(9600);
+
+}
+
+void loop() {
+  // step one revolution  in one direction:
+
+ if (millis()%10000 > 1000  &&  millis()%10000 < 4000) {
+ 
+  myStepper2.step(1), myStepper1.step(-1); 
+ //stepper1 clockwise
+ 
+  delay(1);
+ }
+ else {
+ 
+  myStepper2.step(1), myStepper1.step(1); 
+ //stepper1 clockwise
+ 
+  delay(1);
+ }
+
+ 
+
+ }
+ </code>
+</pre>
+
+
+
+
+     </div>
+   </body>
+   </html>
+
