@@ -4,53 +4,56 @@
 <head>
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<title>PHYSCI 70: Introduction to Digital Fabrication</title>
+	
+	<title>PHYS S-12: Introduction to Digital Fabrication</title>
 </head>
 
 <body>
-	<button id="turn-on" name="turnon">Turn On </button>
-	<button id="turn-off" name="turnoff">Turn Off </button>
 
-<!-- The core Firebase JS SDK is always required and must be listed first -->
-<script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-app.js"></script>
+	<button id="grip-op" name="gripop">Gripper Open</button>
+	<button id="grip-cl" name="gripcl">Gripper Closed</button>
 
-<!-- TODO: Add SDKs for Firebase products that you want to use
-     https://firebase.google.com/docs/web/setup#available-libraries -->
+	<!-- The core Firebase JS SDK is always required and must be listed first -->
+	<script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-app.js"></script>
 
-<script>
-  // Your web app's Firebase configuration
-  var firebaseConfig = {
-    apiKey: "AIzaSyB-TRhl6kJdyq3PiTDWl3gDD_SQIGv9i9E",
-    authDomain: "sprogarm.firebaseapp.com",
-    databaseURL: "https://sprogarm.firebaseio.com",
-    projectId: "sprogarm",
-    storageBucket: "sprogarm.appspot.com",
-    messagingSenderId: "350630609412",
-    appId: "1:350630609412:web:b325d954a2de78b0a3ab51"
-  };
-  // Initialize Firebase
-  firebase.initializeApp(firebaseConfig);
-  
+	<!-- TODO: Add SDKs for Firebase products that you want to use
+		https://firebase.google.com/docs/web/setup#available-libraries -->
+		<script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-database.js"></script>
+
+		<script>
+			var firebaseConfig = {
+				apiKey: "AIzaSyB-TRhl6kJdyq3PiTDWl3gDD_SQIGv9i9E",
+				authDomain: "sprogarm.firebaseapp.com",
+				databaseURL: "https://sprogarm.firebaseio.com",
+				projectId: "sprogarm",
+				storageBucket: "sprogarm.appspot.com",
+				messagingSenderId: "350630609412",
+				appId: "1:350630609412:web:b325d954a2de78b0a3ab51"
+			};
+
+		// Initialize Firebase
+		firebase.initializeApp(firebaseConfig);
+
 	// Get a database reference to our blog
 	var ref = firebase.database().ref("/");
 
 	// make the buttons call the function below 
-	document.getElementById('turn-on').addEventListener('click', turnOn, false);
-	document.getElementById('turn-off').addEventListener('click', turnOff, false);
+	document.getElementById('grip-op').addEventListener('click', gripOp, false);
+	document.getElementById('grip-cl').addEventListener('click', gripCl, false);
 
-	function turnOn(){
-		console.log("turning on");
+	function gripOp(){
+		console.log("Opening Gripper");
 		ref.update({
-			"LED_STATUS": "ON"
+			"Gripper_STATUS": "Open"
 		});
 	}
 
-	function turnOff(){
-		console.log("turning off");
+	function gripCl(){
+		console.log("Closing Gripper");
 		ref.update({
-			"LED_STATUS": "OFF"
+			"Gripper_STATUS": "Closed"
 		});
 	}	
-    </script>
+</script>
 
-</body>
+</body
