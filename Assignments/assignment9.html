@@ -1,14 +1,21 @@
-<DOCTYPE html>
+<!DOCTYPE html>
   <html>
   <head>
     <title>  assignment9  </title>
 
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script> 
-    <link href="./style2.css" rel="stylesheet">
+             <meta charset="utf-8">
+             <meta name="viewport" content="width=device-width, initial-scale=1">
+             <script src = "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js"></script>
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/default.min.css">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/arduino-light.min.css">
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/languages/arduino.min.js"></script>
+            <script>hljs.initHighlightingOnLoad();</script>
+
+             <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+             <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+             <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script> 
+             <link href="./style2.css" rel="stylesheet">
+
 
   </head>
 
@@ -16,38 +23,128 @@
     <h1 class="text-center"> <b> Topic 10: Machine Building </b> </h1>
     <br>
     <br>
-    <a href='./Firebase1.html' >my firebase </a>
 
-      <p>In this first lecture we learnt how to document our assignments with HTML. 
-         Firstly we learnt about GitHub and how to create a new repository. <br> 
-       This are the steps I followed to create my repository: </p>  
+      <p> For this week assignment I decided to controll a meccanical hand from remote using Firebase.<br> I have used the mechanical arm I had 3D printed for my final project. <br> I have found the mechanical arm I needed online (here is the <a href='https://howtomechatronics.com/tutorials/arduino/diy-arduino-robot-arm-with-smartphone-control/'>link</a>) and I have modifyed it as I needed. <br> <br> Firstly I connected the gripper to my Huzzah board: </p>
+      
+<img src="./assign9/connection.jpeg" class="img-responsive margin" style="width:60%" alt="git1">
+
+<p> Then I modifyed the SimpleWiFiServer arduino example to make it drive my servo motor to open and close the gripper. the Servo library doesn't work with the Huzzah board so I had to instal onother library:  </p>
+
+        <img src="./assign9/library.png" class="img-responsive margin" style="width:60%" alt="git2">
+<p> This is my program to use the a servo motor to open or close the gripper: </p>
+
+<pre>
+  <code class="language-arduino">
+
+
+#include <WiFi.h>                                 // esp32 library
+#include <FirebaseESP32.h>                        // firebase library
+#include <ESP32Servo.h>
+
+#define GR_Lower_Limit 60
+#define GR_Upper_Limit 125
+
+Servo myservo;  // create servo object to control a servo
+
+int pos = 0;    // variable to store the servo position
+int current_status = 0;
+
+
+#define FIREBASE_HOST "..."  // the project name address from firebase id
+#define FIREBASE_AUTH "..."                          // the secret key generated from firebase
+#define WIFI_SSID "..."                                // input your home or public wifi name
+#define WIFI_PASSWORD "..."                        // password of wifi ssid
+
+String fireString = "";                                   // Gripper status received from firebase
+
+
+//Define FirebaseESP32 data object
+FirebaseData firebaseData;
+
+void setup() {
+  myservo.attach(21);
+  Serial.begin(115200);
+  delay(1000);
+  WiFi.begin(WIFI_SSID, WIFI_PASSWORD);                          // try to connect with wifi
+  Serial.print("Connecting to ");
+  Serial.print(WIFI_SSID);
+  while (WiFi.status() != WL_CONNECTED) {
+    Serial.print(".");
+    delay(500);
+  }
+
+  Serial.println();
+  Serial.print("Connected to ");
+  Serial.println(WIFI_SSID);
+  Serial.print("IP Address is : ");
+  Serial.println(WiFi.localIP());                                // print local IP address
+  Firebase.begin(FIREBASE_HOST, FIREBASE_AUTH);                  // connect to firebase
+  Firebase.reconnectWiFi(true);
+  Firebase.set(firebaseData, "/Gripper_STATUS", "Open");              // set initial string of "Open"
+}
+
+void loop() {
+
+  Firebase.get(firebaseData, "/Gripper_STATUS");                     // get gripper status input from firebase
+  fireString = firebaseData.stringData();                        // change to e.g. intData() or boolData()
+  Serial.println(fireString);
+
+  if ((fireString == "Closed" and current_status == 0)) {        // compare the input of gripper status received from firebase
+    current_status = 1;
+    Serial.println("Gripper Closed");
+    for (pos = GR_Upper_Limit; pos >= GR_Lower_Limit; pos -= 1) { // goes from 0 degrees to 40 degrees
+      // in steps of 1 degree
+      myservo.write(pos);              // tell servo to go to position in variable 'pos'
+      delay(15);
+    }
+  }
+
+  else if ((fireString == "Open") and current_status == 1) {
+    // compare the input of led status received from firebase
+    current_status = 0;
+    Serial.println("Gripper Open");
+    for (pos = GR_Lower_Limit; pos <= GR_Upper_Limit; pos += 1) { // goes from 0 degrees to 40 degrees
+      // in steps of 1 degree
+      myservo.write(pos);              // tell servo to go to position in variable 'pos'
+      delay(15);
+    }
+  }
+
+  else {
+    if ((fireString != "Open") and (fireString != "Closed"))
+    Serial.println("Please send Open/Closed");
+  }
+
+  delay(1000);                                
+}
+  </code>
+</pre>
+ <p> After this I created my my firebese to controll the gripper from a remote server. </p>
+
+
+  <p> Here you can find the <a href='./Firebase1.html' >web page </a> to controll the gripper </p>
+  <br>
+ 
     <div class="container-fluid bg-3">
+      <div class="row">
       
-       
-        <img src="./git1.png" class="img-responsive margin" style="width:60%" alt="git1">
-       
-         <img src="./git2.png" class="img-responsive margin" style="width:60%" alt="git2">
+       <div class="column">
+         <video controls style="width:50%; min-width:300px; align-items: center;" >
+            <source src="./assign9/gripper2.mov" type="video/mp4">
+         </video> 
+        </div>
+
+          <div class="column">
+         <video controls style="width:50%; min-width:300px; align-items: center;" >
+            <source src="./assign9/gripper1.mov" type="video/mp4">
+         </video> 
+        </div>
+      </div>
+    </div>
+        
       
-       
-         <img src="./git3.png" class="img-responsive margin" style="width:60%" alt="git3">
-       
+</body>
+</html>
 
-    
-    
-       
-         <img src="./git4.png" class="img-responsive margin" style="width:60%" alt="git4">
-       
-       
-         <img src="./git5.png" class="img-responsive margin" style="width:60%" alt="git5">
-       
-       
-         <img src="./git6.png" class="img-responsive margin" style="width:60%" alt="git6">
 
-      <p> To write the HTML for my website I have found <a href='https://www.w3schools.com/' >W3School </a> tutorial very helpful, here are some links to the tutorials I have used: </p>
-      <h2>USEFUL LINKS:</h2>
-      <ul>
-        <li> <a href='https://www.w3schools.com/htmL/html_images_background.asp' >Background image </a><li> <a href='https://www.w3schools.com/tags/ref_colornames.asp' > HTML colors </a>
-       <li> <a href='https://www.w3schools.com/howto/howto_css_vertical_menu.asp' > Menu </a>
-       <li> <a href='https://www.w3schools.com/howto/howto_css_image_overlay.asp' >Ovelay </a>
-       <li> <a href='https://www.w3schools.com/howto/howto_js_image_magnifier_glass.asp' >Magnifier glass
        

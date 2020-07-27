@@ -1,17 +1,46 @@
 
-<!doctype html>
+<!DOCTYPE html>
 <html class="no-js" lang="en">
 <head>
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	
-	<title>PHYS S-12: Introduction to Digital Fabrication</title>
+             <meta charset="utf-8">
+             <meta name="viewport" content="width=device-width, initial-scale=1">
+             <script src = "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js"></script>
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/default.min.css">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/arduino-light.min.css">
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/languages/arduino.min.js"></script>
+            <script>hljs.initHighlightingOnLoad();</script>
+
+             <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+             <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+             <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script> 
+             <link href="./style2.css" rel="stylesheet">
+
+	<title>Firebase</title>
 </head>
 
-<body>
+<body class="margin" style="background-color: black">
+	    <h1 class="text-center" style="color: white"> <b> Gripper </b> </h1>
+ <br>
+ <br>
+ <br> 
 
-	<button id="grip-op" name="gripop">Gripper Open</button>
-	<button id="grip-cl" name="gripcl">Gripper Closed</button>
+  <div class="container-fluid bg-3">
+    <div class="row">
+ <div class= "column" style="text-align: center;">
+	<button  id="grip-op" name="gripop">Gripper Open</button>
+	 <img src="./assign9/open.jpg" class="img-responsive margin" style="width:60%; border: solid; border-color: white;" alt="git2">
+</div>
+<div class="column" style="text-align: center;">
+	<button   id="grip-cl" name="gripcl">Gripper Closed</button>
+	 <img src="./assign9/closed.jpg" class="img-responsive margin" style="width:60%; border: solid; border-color: white;" alt="git2">
+</div>
+
+</div>
+
+
 
 	<!-- The core Firebase JS SDK is always required and must be listed first -->
 	<script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-app.js"></script>
