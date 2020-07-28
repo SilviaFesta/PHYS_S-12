@@ -3,8 +3,7 @@
   background-size: cover;" class="margin">
 <head>
   <title>PHYS S-12: Intro to Digital Fabrication </title>
-
-<!-- added images-->   
+ 
 
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -13,6 +12,7 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
   <link href="./style.css" rel="stylesheet">
 </head>
+
 <body style="background-image: url('background.jpg'); background-repeat: no-repeat;  background-attachment: fixed;
   background-size: cover;" class="margin">
 
@@ -36,31 +36,74 @@ function closeNav() {
   document.getElementById("myNav").style.height = "0%";
 }
 </script>
+
     <header>
       <h1>PHYS S-12:<span style="font-size:40px;cursor:pointer; background-color: black; float: right;" onclick="openNav()">&#9776; MENU </span> <br>Introduction <br>to Digital Fabrication</h1>
     </header>
 
     <hr>
-  <div class="row">
-    <div class="column" style="text-align: center;">
-      <div class= "vertical-center1">
-      <a href='./Assignments/Silvia.html' style="color: white;"><img src="./assignment_image.png" class="img-responsive margin" style="width:70%" alt="assignment_image"></a>
+ <div class="flex-container" style="height: 50vh;">
+    <div class="col" style="display: flex; justify-content: center; text-align: center;">
+      <a href='./Assignments/Silvia.html' style="color: green">
+        <div class="typewriter" style=""><h1 style="color: green">Assignments...</h1>
+        </div>
+      </a>
     </div>
-
-  
-
-    </div>
-    <div class="column" style="text-align: center;">
-      <div class= "vertical-center2">
-      <a href='./01_intro/final_project.html' style="color: white;"><img src="./Final_project_image.png" class="img-responsive margin" style="  width:70%" alt="Final_project_image"></a>
-    </div>
+    <div class="col" style="display: flex; justify-content: center; text-align: center;">
+      <a href='./01_intro/final_project.html' style="color: green"><div class="typewriter" style=""><h1 style="color: green">Final Project...</h1></div>
+      </a>
     </div>
   </div>
-</div>
 
     <div class="absolute" style="text-align: center; color: #00ff00">
       <a href="01_intro/about.html" style="; color: #66ff33; margin-left: 10px; margin-right: 10px; font-size: 30px; text-shadow: 1px 1px black;"><span title="click here to know something about me!">Silvia Festa</span></a>
     </div>
+
+  <script>
+function openNav() {
+  document.getElementById("myNav").style.height = "100%";
+}
+
+function closeNav() {
+  document.getElementById("myNav").style.height = "0%";
+}
+</script>
+        <img id="endImage" src="">
+        <img id="startImage" src="img/background.jpg">
+
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.3/TweenMax.min.js"></script>
+        <script src="js/main.js"></script>
+        <script src="js/PixelWave.js"></script>
+        <script type="text/javascript">
+            function start () {
+                //preload next image
+                console.log('start');
+            }
+
+            function middle () {
+                //exchange content
+                console.log('middle');
+                document.getElementById('startImage').style.display = "none";
+            }
+
+            function end () {
+                //end callback
+                console.log('end');     
+            }
+
+
+            var pixelwave = new PixelWave({
+                canvasTop: 0, //for a fixed header 
+                color: 'black'       
+            });
+
+            
+            pixelwave.start(start,middle,end);
+
+            
+
+        </script>
 
 </body>
 </html>

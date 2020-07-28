@@ -9,7 +9,8 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script> 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="./style.css" >
-
+  <link rel="stylesheet" type="text/css" href="css/component.css" />
+  <script src="js/modernizr.custom.js"></script>
 </head>
 <body style="background-image: url('../background2.jpg'); background-repeat: no-repeat;  background-attachment: fixed;
 background-size: cover;" class="margin">
@@ -40,154 +41,159 @@ function closeNav() {
 <hr>
 
 
-<div class="container-fluid bg-3">
-
-  <div class="row">
-
-   <div class="col-sm-4">
-
-    <h4>
-      <a href='./assignment0.html' style="color: white;"> 
-        <div class="container">
-          <img src="./github1.png" class="round_img" style=" border: solid; border-color: white " alt="github1"> 
-          <div class="overlay">
-           <div class="text">TOPIC 1: <br> GitHub and HTML</div>
-         </div> 
-       </div>
-     </a>
-   </h4>
- </div>
-
-
- <div class="col-sm-4"> 
-  <h4>
-    <a href='./assignment1.html'  style="color: white">
-      <div class="container">
-        <img src="./disegno3d.jpeg" class="round_img" style="border: solid; border-color: white " alt="fusion">
-        <div class="overlay">
-         <div class="text">TOPIC 2: <br> Fusion 360</div>
-       </div> 
-     </div>
-   </a>
- </h4>
-</div>
-
-<div class="col-sm-4">
-  <h4>
-    <a href='./assignment2.html'  style="color: white">
-      <div class="container">
-        <img src="./circuiti.jpeg" class="round_img" style="border: solid; border-color: white" alt="circuito">
-        <div class="overlay">
-         <div class="text">TOPIC 3: <br> Circuits</div>
-       </div> 
-     </div>   
-   </a>
- </h4>
-</div>
-</div>
-
-
-<div class="row">
- <div class="col-sm-4">
-   <h4> 
-     <a href='./assignment3.html' style="color: white">
-      <div class="container">
-        <img src="./motors.jpg" class="round_img" style="border: solid; border-color: white; " alt="motors"> 
-        <div class="overlay">
-          <div class="text">TOPIC 4: <br> Motors</div>
-        </div> 
-      </div>
-    </a>
-  </h4>
-</div>
-
-
-<div class="col-sm-4"> 
-  <h4>           
-    <a href='./assignment4.html'  style="color: white">
-      <div class="container">
-        <img src="./arduino.jpg" class="round_img" style="border: solid; border-color: white; " alt="arduino"> 
-        <div class="overlay">
-         <div class="text">TOPIC 5: <br> Programmable Electronics</div>
-       </div> 
-     </div>
-   </a>
- </h4>
-</div>
-
-<div class="col-sm-4">
-  <h4>
-    <a href='./assignment5.html'  style="color: white">
-      <div class="container">
-        <img src="./3Dscann.jpg" class="round_img" style="border: solid; border-color: white" alt="circuito">
-        <div class="overlay">
-         <div class="text">TOPIC 6: <br> 3D design & Printing </div>
-       </div> 
-     </div>   
-   </a>
- </h4>
-</div>
-</div>
-
-<div class="row">
- <div class="col-sm-4">
-   <h4> 
-     <a href='./assignment6.html' style="color: white">
-      <div class="container">
-        <img src="./sensors.jpeg" class="round_img" style="border: solid; border-color: white; " alt="sensors"> 
-        <div class="overlay">
-          <div class="text">TOPIC 7: <br> Input Devices</div>
-        </div> 
-      </div>
-    </a>
-  </h4>
-</div>
-
- <div class="col-sm-4">
-   <h4> 
-     <a href='./assignment7.html' style="color: white">
-      <div class="container">
-        <img src="./output.jpg" class="round_img" style="border: solid; border-color: white; " alt="sensors"> 
-        <div class="overlay">
-          <div class="text">TOPIC 8: <br> Output Devices</div>
-        </div> 
-      </div>
-    </a>
-  </h4>
-</div>
-
-
- <div class="col-sm-4">
-   <h4> 
-     <a href='./assignment8.html' style="color: white">
-      <div class="container">
-        <img src="./networking1.jpg" class="round_img" style="border: solid; border-color: white; " alt="sensors"> 
-        <div class="overlay">
-          <div class="text">TOPIC 9: <br> Networking/IoT</div>
-        </div> 
-      </div>
-    </a>
-  </h4>
-</div>
-</div>
+      <ul class="grid cs-style-1">
+        <li>
+          <figure>
+            <img src="images/1.png" alt="img01">
+            <a href="assignment0.html">
+            <figcaption>
+              <h3>TOPIC 1</h3>
+              <span>Github and HTML</span>
+            </figcaption>
+            </a>
+          </figure>
+        </li>
+        <li>
+          <figure>
+            <img src="images/2.png" alt="img02">
+            <a href="assignment1.html">
+            <figcaption>
+              <h3>TOPIC 2</h3>
+              <span>Fusion 360</span>
+            </figcaption>
+          </a>
+          </figure>
+        </li>
+        <li>
+          <figure>
+            <img src="images/3.png" alt="img04">
+            <a href="assignment2.html">
+            <figcaption>
+              <h3>TOPIC 3</h3>
+              <span>Circuits</span>
+            </figcaption>
+            </a>
+          </figure>
+        </li>
+        <li>
+          <figure>
+            <img src="images/4.png" alt="img05">
+          <a href="assignment3.html">
+            <figcaption>
+              <h3>TOPIC 4</h3>
+              <span>Motors</span>
+            </figcaption>
+          </a>
+          </figure>
+        </li>
+        <li>
+          <figure>
+            <img src="images/5.png" alt="img03">
+          <a href="assignment4.html">
+            <figcaption>
+              <h3>TOPIC 5</h3>
+              <span>Programmable Elettronics</span>
+            </figcaption>
+          </a>
+          </figure>
+        </li>
+        <li>
+          <figure>
+            <img src="images/6.png" alt="img06">
+          <a href="assignment5.html">
+            <figcaption>
+              <h3>TOPIC 6</h3>
+              <span>3D Design & printing</span>
+            </figcaption>
+          </a>
+          </figure>
+        </li>
+        <li>
+          <figure>
+            <img src="images/7.png" alt="img06">
+            <a href="assignment6.html">
+            <figcaption>
+              <h3>TOPIC 7</h3>
+              <span>Input Devices</span>
+            </figcaption>
+          </a>
+          </figure>
+        </li>
+        <li>
+          <figure>
+            <img src="images/8.png" alt="img06">
+            <a href="assignment7.html">
+            <figcaption>
+              <h3>TOPIC 8</h3>
+              <span>Output devices</span>
+            </figcaption>
+          </a>
+          </figure>
+        </li>
+        <li>
+          <figure>
+            <img src="images/9.png" alt="img06">
+            <a href="assignment8.html">
+            <figcaption>
+              <h3>TOPIC 9</h3>
+              <span>Networking/IoT</span>
+            </figcaption>
+          </a>
+          </figure>
+        </li>
+        <li>
+          <figure>
+            <img src="images/10.png" alt="img06">
+            <a href="assignment9.html">
+            <figcaption>
+              <h3>TOPIC 10</h3>
+              <span>Machine Building</span>
+            </figcaption>
+          </a>
+          </figure>
+        </li>
+      </ul>
+    </div>
+    <script src="js/toucheffects.js"></script>
 
 
-<div class="row">
- <div class="col-sm-4">
-   <h4> 
-     <a href='./assignment9.html' style="color: white">
-      <div class="container">
-        <img src="./robothand.jpeg" class="round_img" style="border: solid; border-color: white; " alt="sensors"> 
-        <div class="overlay">
-          <div class="text">TOPIC 10: <br> Machine Building</div>
-        </div> 
-      </div>
-    </a>
-  </h4>
-</div>
-</div>
+</script>
+        <img id="endImage" src="">
+        <img id="startImage" src="img/background.jpg">
 
 
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.3/TweenMax.min.js"></script>
+        <script src="js/main.js"></script>
+        <script src="js/PixelWave.js"></script>
+        <script type="text/javascript">
+            function start () {
+                //preload next image
+                console.log('start');
+            }
+
+            function middle () {
+                //exchange content
+                console.log('middle');
+                document.getElementById('startImage').style.display = "none";
+            }
+
+            function end () {
+                //end callback
+                console.log('end');     
+            }
+
+
+            var pixelwave = new PixelWave({
+                canvasTop: 0, //for a fixed header 
+                color: 'black'       
+            });
+
+            
+            pixelwave.start(start,middle,end);
+
+            
+
+        </script>
 
 </body>
 </html>

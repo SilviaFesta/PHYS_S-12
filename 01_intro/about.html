@@ -50,5 +50,44 @@ function closeNav() {
 			but most importantly really enjoy travelling, visiting new places and meeting new people. For me this Summer School is a great opportunity to get in touch with other students that share my interests all around the world.</p>
 		</div>
 	</div>
+
+</script>
+        <img id="endImage" src="">
+        <img id="startImage" src="img/background.jpg">
+
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.3/TweenMax.min.js"></script>
+        <script src="js/main.js"></script>
+        <script src="js/PixelWave.js"></script>
+        <script type="text/javascript">
+            function start () {
+                //preload next image
+                console.log('start');
+            }
+
+            function middle () {
+                //exchange content
+                console.log('middle');
+                document.getElementById('startImage').style.display = "none";
+            }
+
+            function end () {
+                //end callback
+                console.log('end');     
+            }
+
+
+            var pixelwave = new PixelWave({
+                canvasTop: 0, //for a fixed header 
+                color: '#dfe6e9'       
+            });
+
+            
+            pixelwave.start(start,middle,end);
+
+            
+
+        </script>
+
 </body>
 </html>

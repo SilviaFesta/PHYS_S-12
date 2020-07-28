@@ -8,28 +8,19 @@ body {
 
 p {font-size: 16px; color: white}
 
+.column{
+  width: 300px;
+}
 .margin {
           margin-top: 60px;
           margin-bottom: 100px;
-        margin-right: 150px;
+        margin-right: 60px;
           margin-left: 60px;
 }
-.column{
-  float: left;
-  width: 50%;
-}
+
 .container-fluid {
   padding: 30px;
   padding-bottom: 70px;
-}
-
-.container {
-  position: relative;
-  width: 80%;
-}
-
-.row {
-  padding-bottom: 100px;  
 }
 
 header{
@@ -89,45 +80,47 @@ background-color: black;
   cursor: pointer;
 }
 
-
+.container {
+  position: relative;
+  width: 80%;
+}
 
 .image {
   display: block;
   width: 100%;
-  height: auto;
+  height: 100%;
 }
 
 .overlay {
   position: absolute;
-  border-radius: 5%;
   top: 0;
   bottom: 0;
-  left: 18px;
+  left: 0;
   right: 0;
   height: 100%;
-  width: 92%;
+  width: 100%;
   opacity: 0;
-  transition: .5s ease;
-  background-color: #AAAAAA;
+  transition: .8s ease;
+  background-color: white;
 }
 
 .container:hover .overlay {
-  opacity: 0.9;
+  opacity: 0.8;
 }
 
 .text {
   color: black;
-  font-size:95%;
-  font-style: bold;
+  font-size: 20px;
   position: absolute;
   top: 50%;
   left: 50%;
-  opacity: 1;
   -webkit-transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
   text-align: center;
 }
+
+
 
 .overlay2 {
   height: 0%;
@@ -179,3 +172,4 @@ background-color: black;
   right: 35px;
   }
 }
+
