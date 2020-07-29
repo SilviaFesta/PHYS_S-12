@@ -34,7 +34,7 @@ header{
   text-shadow: 4px 2px black;
   }
 div.absolute {
-   position: absolute;
+   position: fixed;
    width: 22%;
    right: 39%;
    bottom: 10px;

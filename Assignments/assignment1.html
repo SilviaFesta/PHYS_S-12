@@ -14,8 +14,39 @@
       <body style="background-image: url('../background2.jpg'); background-repeat: no-repeat;  background-attachment: fixed;
 background-size: cover;">
 
-  <div class="margin" style="background-color: white"> 
+<div id="myNav" class="overlay2">
+  <a href="javascript:void(0)" class="closebtn2" onclick="closeNav()">&times;</a>
+  <div class="overlay-content2">
+    <a href="./Silvia.html">Assignments</a>
+    <a href="../01_intro/about.html">About</a>
+    <a href="../index.html">Home</a>
+    <a href="../01_intro/final_project.html">Final Project</a>
+
+  </div>
+</div>
+
+
+
+<script>
+function openNav() {
+  document.getElementById("myNav").style.height = "100%";
+}
+
+function closeNav() {
+  document.getElementById("myNav").style.height = "0%";
+}
+</script>
+
+<header>
+ <span style="font-size:40px; cursor:pointer; background-color: black; float: right; margin-right: 5%" onclick="openNav()">&#9776; MENU </span> 
+</header>
+<hr>
+
+
+   <div class="margin" style="background-color: white; border-style: solid ; border-width: medium; border-color: #8533ff "> 
+
      <div class="container-fluid bg-3">
+      <br>
             <h1 class="text-center"> <b> Topic 2: Designing components with fusion 360 </b> </h1>
             <br>
             <br>
@@ -23,7 +54,7 @@ background-size: cover;">
             <h4> <b> STEPS: </b> </h4>
 
              <ol>
-            <li> <h4>  Choose the components to design </h4></li>
+            <li> <h4>  Choose the components you want to design </h4></li>
 
             <li><h4>  Measure with a caliber </h4></li>
 
@@ -34,57 +65,73 @@ background-size: cover;">
             <li><h4>  Assembly </h4> </li>
 
            </ol>
+           <br>
+           <br>
 
       
-            <h4>  1 CHOOSE COMPONENTS TO DESIGN: </h4>
+            <h4>  1) CHOOSE THE COMPONENTS YOU WANT TO DESIGN: </h4>
 
-            <img src="../01_intro/components.jpg" class="img-responsive margin" style="width:50%; align-content: center;" alt="components">
+            <img src="../01_intro/components.jpg" class="img-responsive margin" style="width:50%; align-content: center;border-style:solid; border-color: black; border-width:thin;" alt="components">
 
-            <p> I have chosen to start by designing something simple as component 1 (infact this component can be designed by extruding one single sketch) and than try something more complex as a screw.</p>
+            <p> I have chosen to start by designing something simple as component 1 (infact this component can be designed by extruding one single sketch) and than try something more complex as a screw.</p> <br>
 
-            <h4>  2 MEASUTING WITH THE CALIBER: </h4>
+            <h4>  2) MEASUTING WITH THE CALIBER: </h4>
 
             <p> The caliber can be used to measure lengths, inner lenghts (such as the diameter of a circular hole) and depths. </p>
 
-            <img src="../01_intro/caliber1.jpg" class="img-responsive margin" style="width:50%; align-content: center" alt="caliber1">
+            <img src="../01_intro/caliber1.jpg" class="img-responsive margin" style="width:50%; align-content: center;border-style:solid; border-color: black; border-width:thin;" alt="caliber1">
 
             <p> Here are some examples of mesures I have taken with the caliber:</p>
            
-           <img src="../01_intro/caliber2.jpg" class="img-responsive margin" style="width:30%" alt="caliber2">
-           <img src="../01_intro/caliber3.jpg" class="img-responsive margin" style="width:30%" alt="caliber3">
-             <img src="../01_intro/caliber4.png" class="img-responsive margin" style="width:30%" alt="caliber4">
+           <img src="../01_intro/caliber2.jpg" class="img-responsive margin" style="width:30%;border-style:solid; border-color: black; border-width:thin; " alt="caliber2">
+           <img src="../01_intro/caliber3.jpg" class="img-responsive margin" style="width:30%;border-style:solid; border-color: black; border-width:thin;" alt="caliber3">
+             <img src="../01_intro/caliber4.png" class="img-responsive margin" style="width:30%;border-style:solid; border-color: black; border-width:thin;" alt="caliber4">
 
-             <h4>  3 CREATE SKETCHES : </h4>
+             <h4>  3) CREATE SKETCHES : </h4>
 
               <P> After I have taken all the measure of the components I wanted to design I created the sketches on fusion 360. </P>
 
 
-           <img src="../01_intro/sketch1.png" class="img-responsive margin" style="width:40%; align-content: center;" alt="sketch1">
-            <img src="../01_intro/sketch2.png" class="img-responsive margin" style="width:40%; align-content: center" alt="sketch2">
-             <img src="../01_intro/sketch3.png" class="img-responsive margin" style="width:40%; align-content: center;" alt="sketch3">
+           <img src="../01_intro/sketch1.png" class="img-responsive margin" style="width:40%; align-content: center;border-style:solid; border-color: black; border-width:thin;" alt="sketch1">
+            <img src="../01_intro/sketch2.png" class="img-responsive margin" style="width:40%; align-content: center;border-style:solid; border-color: black; border-width:thin;" alt="sketch2">
+             <img src="../01_intro/sketch3.png" class="img-responsive margin" style="width:40%; align-content: center;border-style:solid; border-color: black; border-width:thin;" alt="sketch3">
 
              <p> In the previous sketches I have defined the distances inside the sketch, but it can be usefull to use fixed parameters when you need to use the same measure more than once for the same component or for different components. I used parameters to design a screw and a nut. </p> 
                
-            <img src="../01_intro/parameters 1.png" class="img-responsive margin" style="width:30%" alt="parameters 1">
+            <img src="../01_intro/parameters 1.png" class="img-responsive margin" style="width:50%;border-style:solid; border-color: black; border-width:thin;" alt="parameters 1">
 
-            <h4>  3 EXTRUDE : </h4>
+            <h4>  4) EXTRUDE : </h4>
             <p> When the sketches are ready you can extrude some part in 3 dimention to create your 3d model. Here are some models I created: </p>
-             <img src="../01_intro/extrude1.png" class="img-responsive margin" style="width:30%" alt="extrude1">
-              <img src="../01_intro/extrude2.png" class="img-responsive margin" style="width:30%" alt="extrude2"> 
-              <img src="../01_intro/extrude3.png" class="img-responsive margin" style="width:30%" alt="extrude3"> 
-              <img src="../01_intro/extrude4.png" class="img-responsive margin" style="width:30%" alt="extrude4">
-              <img src="../01_intro/extrude5.png" class="img-responsive margin" style="width:30%" alt="extrude5">
+            <div class="row">
+            <div class="column">
+             <img src="../01_intro/extrude1.png" class="img-responsive margin" style="width:60%;border-style:solid; border-color: black; border-width:thin; " alt="extrude1">
+           </div>
+           <div class="column">
+              <img src="../01_intro/extrude2.png" class="img-responsive margin" style="width:60%;border-style:solid; border-color: black; border-width:thin;" alt="extrude2"> 
+            </div>
+          </div>
+           <div class="row">
+           <div class="column">
+              <img src="../01_intro/extrude3.png" class="img-responsive margin" style="width:60%;border-style:solid; border-color: black; border-width:thin;" alt="extrude3">
+            </div>
+              <div class="column"> 
+              <img src="../01_intro/extrude4.png" class="img-responsive margin" style="width:60%;border-style:solid; border-color: black; border-width:thin;" alt="extrude4">
+            </div>
+              <div class="column" style="text-align: center">
+              <img src="../01_intro/extrude5.png" class="img-responsive margin" style="width:60%;border-style:solid; border-color: black; border-width:thin;" alt="extrude5">
+            </div>
+          </div>
 
-             <h4>  4 ASSEMBLY : </h4>
+             <h4>  5) ASSEMBLY : </h4>
              <p>After all the components were ready I created this assembly: </p>
-             <img src="../01_intro/assembly1.png" class="img-responsive margin" style="width:30%" alt="assembly1">
-             <img src="../01_intro/assembly2.png" class="img-responsive margin" style="width:30%" alt="assembly2">
-             <img src="../01_intro/assembly3.png" class="img-responsive margin" style="width:30%" alt="assembly3">
+             <img src="../01_intro/assembly1.png" class="img-responsive margin" style="width:30%;border-style:solid; border-color: black; border-width:thin;" alt="assembly1">
+             <img src="../01_intro/assembly2.png" class="img-responsive margin" style="width:30%;border-style:solid; border-color: black; border-width:thin;" alt="assembly2">
+             <img src="../01_intro/assembly3.png" class="img-responsive margin" style="width:30%;border-style:solid; border-color: black; border-width:thin;" alt="assembly3">
 
               <h4>  MORE COMPLEX MODELS: </h4>
              <p>To create more complex models it is possibole to modify tridimentional bodies once they are extruded. I have used fillet, chamfer, combine and split body. It also possible to repeat part of a sketch by creating a pattern. To create a more complex surface I have used "create/loft".<br> This is an example of a complex model I have created: </p>
 
-             <img src="../wheel.png" class="img-responsive margin" style="width:50%; align-content: center;" alt="assembly3">
+             <img src="../wheel.png" class="img-responsive margin" style="width:50%; align-content: center;border-style:solid; border-color: black; border-width:thin;" alt="assembly3">
 
   </div>
 </div>

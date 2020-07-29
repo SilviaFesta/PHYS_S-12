@@ -5,7 +5,9 @@ body {
     background-color: white;
   }
 
-
+h4 {
+  tex
+}
 
 h1 {
   font-size: 40;
@@ -41,7 +43,7 @@ p {font-size: 24px; color: black}
 
 header{
   text-align: left;
-  color: black;
+  color: white;
   text-shadow: 4px 2px black;
   }
 div.absolute {

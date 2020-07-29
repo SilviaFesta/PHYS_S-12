@@ -22,13 +22,44 @@
  <body style="background-image: url('../background2.jpg'); background-repeat: no-repeat;  background-attachment: fixed;
 background-size: cover;">
 
-  <div class="margin" style="background-color: white"> 
+<div id="myNav" class="overlay2">
+  <a href="javascript:void(0)" class="closebtn2" onclick="closeNav()">&times;</a>
+  <div class="overlay-content2">
+    <a href="./Silvia.html">Assignments</a>
+    <a href="../01_intro/about.html">About</a>
+    <a href="../index.html">Home</a>
+    <a href="../01_intro/final_project.html">Final Project</a>
+  </div>
+</div>
+
+
+
+<script>
+function openNav() {
+  document.getElementById("myNav").style.height = "100%";
+}
+
+function closeNav() {
+  document.getElementById("myNav").style.height = "0%";
+}
+</script>
+
+<header>
+ <span style="font-size:40px; cursor:pointer; background-color: black; float: right; margin-right: 5%" onclick="openNav()">&#9776; MENU </span> 
+</header>
+<hr>
+
+
+  <div class="margin" style="background-color: white; border-style: solid ; border-width: medium; border-color: #8533ff ">
+
      <div class="container-fluid bg-3"> 
+      <br>
 
     <h1 class="text-center"> <b> Topic 7: Electronic input devices</b> </h1>
     <br>
     <br>
     <h4> <b> IR PHOTOTRANSISTOR </b></h4>
+    <br>
  <ul>
       <li><h4> SENSOR 1: detecting the dis</h4>  </li> </ul>
 
@@ -37,10 +68,11 @@ background-size: cover;">
 
          <p> this is my circuit: </p>
        
-        <img src="./assign6/circuit1.jpeg" class="img-responsive margin" style="width:60%" alt="image0">
+        <img src="./assign6/circuit1.jpeg" class="img-responsive margin" style="width:50%;border-style:solid; border-color: black; border-width:thin;" alt="image0">
 
         <p> Firstly I have written a simple arduino program to read the values of the phototransistor: </p>
-        <pre>
+        
+          <pre style="margin: 4%; border-style:solid; border-color: gray; border-width:thin; border-radius: 20px">
         <code class= "language-arduino" >
           void setup() {
           Serial.begin(9600); 
@@ -60,26 +92,26 @@ background-size: cover;">
            3) The phototransistor detected infrared ligth beams directly from the LED instead of the reflected ones <br> SOLUTION: cover both the phototransistor and the led with a pice of a staw so that all the light from the led would have been directed up and the phototransistor would only detect the reflected light: </p>
            <div class="row">
             <div class="column">
-           <img src="./assign6/led1.jpeg" class="img-responsive margin" style="width:60%; border-color: black" alt="image0">
+           <img src="./assign6/led1.jpeg" class="img-responsive margin" style="width:60%;border-style:solid; border-color: black; border-width:thin;" alt="image0">
          </div>
          <div class="column" >
-           <img src="./assign6/led2.jpeg" class="img-responsive margin" style="width:60%; border-color: black" alt="image0">
+           <img src="./assign6/led2.jpeg" class="img-responsive margin" style="width:60%;border-style:solid; border-color: black; border-width:thin;" alt="image0">
          </div>
          </div>
          <p> 4) Not even this solution seemed to work because the straw was transparent to infrared light so I covered the pices of stow with insulant tape. <br> After this my sensor finally worked </p>
 
-         <img src="./assign6/led3.jpeg" class="img-responsive margin" style="width:60%;" alt="image0">
+         <img src="./assign6/led3.jpeg" class="img-responsive margin" style="width:60%;;border-style:solid; border-color: black; border-width:thin;" alt="image0">
           <img src="./assign6/sensor_values.png" class="img-responsive margin" style="width:60%" alt="image0">
 
          <p> So I started taking datas: I used a meter to see what was the detected value when an obstacle was placed at different distances </p>
 
 
        
-         <img src="./assign6/measurements.jpeg" class="img-responsive margin" style="width:60%" alt="image1">
+         <img src="./assign6/measurements.jpeg" class="img-responsive margin" style="width:60%;border-style:solid; border-color: black; border-width:thin;" alt="image1">
       
       <p> This are the datas I got: </p>
-      <img src="./assign6/tabella.png" class="img-responsive margin" style="width:60%" alt="image1">
-        <img src="./assign6/grafico.png" class="img-responsive margin" style="width:60%" alt="image1">
+      <img src="./assign6/tabella.png" class="img-responsive margin" style="width:60%;" alt="image1">
+        <img src="./assign6/grafico.png" class="img-responsive margin" style="width:60%;border-style:solid; border-color: black; border-width:thin;" alt="image1">
        
 
        
@@ -90,24 +122,25 @@ background-size: cover;">
 
 <div class="row">
             <div class="column" >
-           <img src="./assign6/sensore.jpeg" class="img-responsive margin" style="width:60%; border-color: black" alt="image0">
+           <img src="./assign6/sensore.jpeg" class="img-responsive margin" style="width:60%;border-style:solid; border-color: black; border-width:thin; border-color: black" alt="image0">
          </div>
          <div class="column" >
-           <img src="./assign6/sensor values1.png" class="img-responsive margin" style="width:80%; border-color: black" alt="image0">
+           <img src="./assign6/sensor values1.png" class="img-responsive margin" style="width:80%;" alt="image0">
          </div>
        </div>
 
          <div class="row">
             <div class="column" >
-           <img src="./assign6/sensore2.jpeg" class="img-responsive margin" style="width:60%; border-color: black" alt="image0">
+           <img src="./assign6/sensore2.jpeg" class="img-responsive margin" style="width:60%;border-style:solid; border-color: black; border-width:thin;" alt="image0">
          </div>
          <div class="column" >
-           <img src="./assign6/sensor_values2.png" class="img-responsive margin" style="width:80%; border-color: black" alt="image0">
+           <img src="./assign6/sensor_values2.png" class="img-responsive margin" style="width:80%;" alt="image0">
          </div>
        </div>
 
          <p> So I wrote this arduino program: </p>
-          <pre>
+          
+          <pre style="margin: 4%; border-style:solid; border-color: gray; border-width:thin; border-radius: 20px">
             <code class="language-arduino">
 
 void setup() {
@@ -129,19 +162,19 @@ void loop() {
           </pre>
 <div class="row">
            <div class="column">
-           <img src="./assign6/sensore.jpeg" class="img-responsive margin" style="width:60%; border-color: black" alt="image0">
+           <img src="./assign6/sensore.jpeg" class="img-responsive margin" style="width:60%;border-style:solid; border-color: black; border-width:thin;" alt="image0">
          </div>
          <div class="column" >
-           <img src="./assign6/no_obstacle.png" class="img-responsive margin" style="width:80%; border-color: black;" alt="image0">
+           <img src="./assign6/no_obstacle.png" class="img-responsive margin" style="width:80%;border-style:solid; border-color: black; border-width:thin;" alt="image0">
          </div>
        </div>
 
          <div class="row">
             <div class="column" >
-           <img src="./assign6/sensore2.jpeg" class="img-responsive margin" style="width:60%; border-color: black" alt="image0">
+           <img src="./assign6/sensore2.jpeg" class="img-responsive margin" style="width:60%;border-style:solid; border-color: black; border-width:thin;" alt="image0">
          </div>
          <div class="column">
-           <img src="./assign6/detected.png" class="img-responsive margin" style="width:60%; border-color: black" alt="image0">
+           <img src="./assign6/detected.png" class="img-responsive margin" style="width:60%;border-style:solid; border-color: black; border-width:thin;" alt="image0">
          </div>
        </div>
 

@@ -20,8 +20,38 @@
   <body style="background-image: url('../background2.jpg'); background-repeat: no-repeat;  background-attachment: fixed;
 background-size: cover;">
 
-  <div class="margin" style="background-color: white"> 
+<div id="myNav" class="overlay2">
+  <a href="javascript:void(0)" class="closebtn2" onclick="closeNav()">&times;</a>
+  <div class="overlay-content2">
+    <a href="./Silvia.html">Assignments</a>
+    <a href="../01_intro/about.html">About</a>
+    <a href="../index.html">Home</a>
+    <a href="../01_intro/final_project.html">Final Project</a>
+  </div>
+</div>
+
+
+
+<script>
+function openNav() {
+  document.getElementById("myNav").style.height = "100%";
+}
+
+function closeNav() {
+  document.getElementById("myNav").style.height = "0%";
+}
+</script>
+
+<header>
+ <span style="font-size:40px; cursor:pointer; background-color: black; float: right; margin-right: 5%" onclick="openNav()">&#9776; MENU </span> 
+</header>
+<hr>
+
+
+  <div class="margin" style="background-color: white; border-style: solid ; border-width: medium; border-color: #8533ff ">
+
      <div class="container-fluid bg-3">
+      <br>
          <h1 class="text-center"> <b> Topic 8:  Electronic output devices </b> </h1>
     <br>
     <br>
@@ -35,7 +65,8 @@ background-size: cover;">
         <img src="./assign7/machine.jpeg" class="img-responsive margin" style="width:60%" alt="git1">
 
         <p> I connected the two stepper motors to my Metro board and I wrote an arduino program to run both of them: </p>
-        <pre>
+        
+          <pre style="margin: 4%; border-style:solid; border-color: gray; border-width:thin; border-radius: 20px">
           <code class="arduino-language" >
 
 
@@ -83,7 +114,8 @@ background-size: cover;">
  <br> This is my new program: </p>
 
 
-                <pre>
+                
+          <pre style="margin: 4%; border-style:solid; border-color: gray; border-width:thin; border-radius: 20px">
           <code class="arduino-language" >
 
 
@@ -121,7 +153,8 @@ void loop() {
 
 
 
-                <pre>
+                
+          <pre style="margin: 4%; border-style:solid; border-color: gray; border-width:thin; border-radius: 20px">
           <code class="arduino-language" >
 
 
@@ -187,7 +220,8 @@ void loop() {
 
         <p> Here are some arduino program to make the machine move in different directions: </p>
 
-           <pre>
+           
+          <pre style="margin: 4%; border-style:solid; border-color: gray; border-width:thin; border-radius: 20px">
           <code class="arduino-language" >
             // THIS PROGRAM MAKES THE MACHINE MOVE FORWARD AND BACK
 
@@ -233,7 +267,8 @@ void loop() {
 </code>
 </pre>
 
-     <pre>
+     
+          <pre style="margin: 4%; border-style:solid; border-color: gray; border-width:thin; border-radius: 20px">
           <code class="arduino-language" >
 
 // THIS PROGRAM MAKES THE MACHINE TURN EVERY SIX SECONDS
