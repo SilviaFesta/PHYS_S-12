@@ -17,8 +17,8 @@ p {font-size: 24px; color: black}
 .margin {
           margin-top: 100px;
           margin-bottom: 100px;
-     	  margin-right: 20%;
-      	  margin-left: 20%;
+     	  margin-right: 16%;
+      	  margin-left: 16%;
 }
 .column{
   float: left;
@@ -161,7 +161,7 @@ background-color: white;
 .overlay2 a {
   padding: 8px;
   text-decoration: none;
-  font-size: 20%;
+  font-size: 36px;
   color: #818181;
   display: block;
   transition: 0.3s;
