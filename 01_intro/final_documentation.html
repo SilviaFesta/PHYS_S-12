@@ -60,7 +60,6 @@ function closeNav() {
 
       <p>For My final project I decided to build a smart robot that can detect small object and pick them. As well as being used to remove trash from the streets this robot can also be used at home to help cleaning and tidying rooms. </p>  
 
-      <!-- insert video here -->
       <h4> HOW DOES IT WORK? </h4>
       <br>
       <br>
@@ -169,7 +168,7 @@ function closeNav() {
     
   
 
-      <p> Firstly I created a Cad of my project with fusion 360. in this cad I included two traction wheels, two wheels not attached to motors and a swivel wheel because I didn't know if my project would have worked best with four wheels (that give more stability) or with two wheels and a swiver wheel (that allaws to turn more easily). </p>
+      <p> Firstly I created a Cad of my project with fusion 360. In this CAD I included two traction wheels, two wheels not attached to motors and a swivel wheel because I didn't know if my project would have worked best with four wheels (that give more stability) or with two wheels and a swiver wheel (that allaws to turn more easily). </p>
       <br>
       <iframe src="
       https://gmail988804.autodesk360.com/g/shares/SH56a43QTfd62c1cd968e958ba8db393d8b3?viewState=NoIgbgDAdAjCA0IDeAdEAXAngBwKZoC40ARXAZwEsBzAOzXjQEMyzd1C0YAWL3CAZgAmggLQB2AJy4AHCN78AbCIkSAZhJH8JAY2mCIAI22Mu06WgC%2BIALpA" width="640" height="480" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true"  frameborder="0"></iframe>
@@ -227,8 +226,8 @@ function closeNav() {
  <br>
  <br>
 
-    <h4> MECCANICAL ARM: <h4>
-      <p> I found the meccanical arm I wanted to include in my project online but I had to modify some parts to fit my project. Here is a <a style="color:#8533ff" href='https://howtomechatronics.com/tutorials/arduino/diy-arduino-robot-arm-with-smartphone-control/'>link</a> to the page where I found the meccanical arm I used. </p> 
+    <h4> MECHANICAL ARM: <h4>
+      <p> I found the mechanical arm I wanted to include in my project online but I had to modify some parts to fit my project. Here is a <a style="color:#8533ff" href='https://howtomechatronics.com/tutorials/arduino/diy-arduino-robot-arm-with-smartphone-control/'>link</a> to the page where I found the mechanical arm I used. </p> 
 
        <p> 3D printed parts: </p>
  <img src="./Final_project/page3/IMG_5396.jpg" class="img-responsive margin" style="width:60%; border-style:solid; border-color: black; border-width:thin;" alt="git2">
@@ -250,7 +249,7 @@ function closeNav() {
      <br>
      <p>This is the solutions I found: </p>
      <ul>
-      <li> Use an A4988 Servo driver </li>
+      <li> Use an PCA9685 Servo driver </li>
       <p> This driver allaws you to run up to 16 servo motors usigng only 1 uoutput pin, 1 SCL and 1 SDA pin. </p>
       <li> use a protoboard </li>
         <p> I soldered some GROUND, +3V, SCL and SDA connection on a protoboard so that I could connect my sensor to those and instead of using more pins.</p>
@@ -288,7 +287,7 @@ function closeNav() {
           <br>
           <br>
           <h4> ARDUINO CODING <h4>
-            <p> To write my arduino code I divided my project into it's main 3 parts: stepper motors circuit, meccanical arm and sensor. I started by looking at the examples and modifyed them to fit my project. I used "dual sensor" from the library Adafruit_VL53LOX and I added one sensor. I also used the example "servo" from the library Adafruit_PWMServoDriver. after i tried all those separately I started writing my own code including in it part of those examples and defining my own funcitions.
+            <p> To write my arduino code I divided my project into it's main 3 parts: stepper motors circuit, mechanical arm and sensor. I started by looking at the examples and modifyed them to fit my project. I used "dual sensor" from the library Adafruit_VL53LOX and I added one sensor. I also used the example "servo" from the library Adafruit_PWMServoDriver. After I tried all those separately I started writing my own code including in it part of those examples and defining my own functions.
            <p> This is the final version of my arduino code: </p>
            <pre>
             <code class="language_arduino">
