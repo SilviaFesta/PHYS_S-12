@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+  <html>
+  <head>
+    <title>  documentation  </title>
+
+             <meta charset="utf-8">
+             <meta name="viewport" content="width=device-width, initial-scale=1">
+             <script src = "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js"></script>
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/default.min.css">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/arduino-light.min.css">
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/languages/arduino.min.js"></script>
+            <script>hljs.initHighlightingOnLoad();</script>
+
+             <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+             <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+             <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script> 
+             <link href="./style2.css" rel="stylesheet">
+
+
+  </head>
+<body style="background-image: url('../background2.jpg'); background-repeat: no-repeat;  background-attachment: fixed;
+background-size: cover;">
+
+<div id="myNav" class="overlay2">
+  <a href="javascript:void(0)" class="closebtn2" onclick="closeNav()">&times;</a>
+  <div class="overlay-content2">
+    <a href="../Assignments/Silvia.html">Assignments</a>
+    <a href="./about.html">About</a>
+    <a href="../index.html">Home</a>
+    <a href="./final_project.html">Final Project</a>
+  </div>
+</div>
+
+
+
+<script>
+function openNav() {
+  document.getElementById("myNav").style.height = "100%";
+}
+
+function closeNav() {
+  document.getElementById("myNav").style.height = "0%";
+}
+</script>
+
+<header>
+ <span style="font-size:40px; cursor:pointer; background-color: black; float: right; margin-right: 5%" onclick="openNav()">&#9776; MENU </span> 
+</header>
+<hr>
+
+  <div class="margin" style="background-color: white; border-style: solid ; border-width: medium; border-color: #8533ff "> 
+
+
+
+     <div class="container-fluid bg-3">
+      <br>
+    <h1 class="text-center"> <b> My final project </b> </h1>
+    <br>
+    <br>
+
+      <p>For My final project I decided to build a smart robot that can detect small object and pick them. As well as being used to remove trash from the streets this robot can also be used at home to help cleaning and tidying rooms. </p>  
+
+      <!-- insert video here -->
+      <h4> HOW DOES IT WORK? </h4>
+      <br>
+      <br>
+      <div class="column">
+      <video controls style="width:70%; min-width:300px" >
+
+      <source src="./Animazione.MOV" type="video/mp4">
+</video>
+</div>
+<div class="column">
+<video controls style="width:70%; min-width:300px" >
+      <source src="./Target.MOV" type="video/mp4">
+</video>
+</div>
+ <img src="./path.png" class="img-responsive margin" style="width:60%; border-style:solid; border-color: black; border-width:thin;" alt="git2">
+ <br>
+
+       
+       <div style= "margin: 10%; background-color: #e6e6ff">
+        <div style= "margin-left: 3%; margin-right: 3%; margin-top: 10%; margin-bottom: 5%; background-color: #e6e6ff">
+        <h1 style="text-align: center;"> Materials </h1>
+        <br>
+         <h4> MOTORS: </h4>
+       <ul>
+        <li> x2) stepper motor Nema 17HS13-0404S1    <a style="color:#8533ff" href='https://www.amazon.it/WINOMO-passo-passo-17-Stepper-professionale-stampante/dp/B01L6VKWXG/ref=sr_1_11?__mk_it_IT=%C3%85M%C3%85%C5%BD%C3%95%C3%91&dchild=1&keywords=stepper+motor+nema+17&qid=1596391729&s=electronics&sr=1-11'>   Link (similiar motor)</a> </li>
+        <li> x4) 6Pcs MG90S Metal Geared Micro Servo Motor  <a style="color:#8533ff" href='https://www.amazon.it/Innovateking-EU-MG90S-Metal-Geared-Helicopter/dp/B07FQMTLD4/ref=sr_1_2?__mk_it_IT=%C3%85M%C3%85%C5%BD%C3%95%C3%91&dchild=1&keywords=6Pcs+MG90S+Metal+Geared+Micro+Servo+Motor&qid=1596391808&s=electronics&sr=1-2'>   Amazon Link</a>   </li>
+        <li> x2) 2Pcs MG996R Metal Gered Servo Motor <a style="color:#8533ff" href='https://www.amazon.it/SunFounder-Digital-Helicopter-Fix-Wing-Airplane/dp/B01KZKOIZC/ref=sr_1_fkmr0_2?__mk_it_IT=%C3%85M%C3%85%C5%BD%C3%95%C3%91&dchild=1&keywords=2Pcs+MG996R+Metal+Gered+Servo+Motor&qid=1596391839&s=electronics&sr=1-2-fkmr0'>   Amazon Link</a> </li>
+      </ul>
+      <br>
+
+  <h4> BOARDS AND MOTOR DRIVERS: </h4>
+    <ul>
+       
+        <li> x1) Huzzah ESP32 Feather <a style="color:#8533ff" href='https://www.amazon.it/Adafruit-huzzah32-esp32-Feather-Board-ada3405/dp/B0743FNXK5/ref=sr_1_2?__mk_it_IT=%C3%85M%C3%85%C5%BD%C3%95%C3%91&dchild=1&keywords=Huzzah+ESP32+board&qid=1596391883&s=electronics&sr=1-2'>   Amazon Link</a></li>
+
+        <li> x1) protoboard <a style="color:#8533ff" href='https://www.amazon.it/SODIAL-Prototype-universale-breadboard-Protoboard/dp/B00LO2V7F0/ref=sr_1_8?__mk_it_IT=%C3%85M%C3%85%C5%BD%C3%95%C3%91&dchild=1&keywords=protoboard&qid=1596391926&s=electronics&sr=1-8'>   Amazon Link</a></li> 
+
+        <li> x2) stepper motor Driver A4988 <a style="color:#8533ff" href='https://www.amazon.it/MASUNN-Pannello-Protezione-Stepper-Arduino/dp/B07D4DXB1G/ref=sr_1_2_sspa?__mk_it_IT=%C3%85M%C3%85%C5%BD%C3%95%C3%91&dchild=1&keywords=stepper+motor+Driver+A4988&qid=1596391957&s=electronics&sr=1-2-spons&psc=1&spLa=ZW5jcnlwdGVkUXVhbGlmaWVyPUExQkVIWFNHQkdRS1NJJmVuY3J5cHRlZElkPUEwMzk5OTMwMjNLRkRBQlZGMVJBWiZlbmNyeXB0ZWRBZElkPUEwMjUyMjA4MjFWMUk4WU5PVjU3UiZ3aWRnZXROYW1lPXNwX2F0ZiZhY3Rpb249Y2xpY2tSZWRpcmVjdCZkb05vdExvZ0NsaWNrPXRydWU='>   Amazon Link</a></li>
+
+        <li> x1) Cnc Shield <a style="color:#8533ff" href='https://www.amazon.it/MASUNN-Pannello-Protezione-Stepper-Arduino/dp/B07D4DXB1G/ref=sr_1_2_sspa?__mk_it_IT=%C3%85M%C3%85%C5%BD%C3%95%C3%91&dchild=1&keywords=stepper+motor+Driver+A4988&qid=1596391957&s=electronics&sr=1-2-spons&psc=1&spLa=ZW5jcnlwdGVkUXVhbGlmaWVyPUExQkVIWFNHQkdRS1NJJmVuY3J5cHRlZElkPUEwMzk5OTMwMjNLRkRBQlZGMVJBWiZlbmNyeXB0ZWRBZElkPUEwMjUyMjA4MjFWMUk4WU5PVjU3UiZ3aWRnZXROYW1lPXNwX2F0ZiZhY3Rpb249Y2xpY2tSZWRpcmVjdCZkb05vdExvZ0NsaWNrPXRydWU='>   Amazon Link</a></li>
+
+        <li> x1) Servo driver PCA9685 <a style="color:#8533ff" href='https://www.amazon.it/Electrely-PCA9685-Interfaccia-Arduino-Raspberry/dp/B07GRQ961G/ref=sr_1_1_sspa?__mk_it_IT=%C3%85M%C3%85%C5%BD%C3%95%C3%91&dchild=1&keywords=Servo+driver+PCA9685&qid=1596392027&s=electronics&sr=1-1-spons&psc=1&spLa=ZW5jcnlwdGVkUXVhbGlmaWVyPUEzNFk2QVEyTUUwQktUJmVuY3J5cHRlZElkPUEwNjI2NTQ3MTRDN1BJVDcyMUJYRCZlbmNyeXB0ZWRBZElkPUEwMzM5ODc5MTQyQkRLREFQVU9INyZ3aWRnZXROYW1lPXNwX2F0ZiZhY3Rpb249Y2xpY2tSZWRpcmVjdCZkb05vdExvZ0NsaWNrPXRydWU='>   Amazon Link</a></li>
+
+      </ul>
+        <br>
+
+<h4> SENSORS: </h4>
+
+       <ul> 
+       <li> x3) GY-VL53L0XV2 L53L0X TOF Sensor <a style="color:#8533ff" href='https://www.amazon.it/Beauneo-VL53L0X-Sensore-distanza-GY-VL53L0XV2/dp/B086KSLHK2/ref=sr_1_3?__mk_it_IT=%C3%85M%C3%85%C5%BD%C3%95%C3%91&dchild=1&keywords=GY-VL53L0XV2+L53L0X+TOF+Sensor&qid=1596392221&s=electronics&sr=1-3-catcorr'>   Amazon Link</a></li>
+     </ul>
+       <br>
+
+<h4> WHEELS:</h4>
+      <ul>
+        <li> x2) Wheels <a style="color:#8533ff" href='https://www.amazon.it/DollaTek-Pneumatici-plastica-motoriduttore-Arduino/dp/B081JM5WN8/ref=sr_1_1?__mk_it_IT=%C3%85M%C3%85%C5%BD%C3%95%C3%91&dchild=1&keywords=ruote+robot&qid=1596392339&s=electronics&sr=1-1'>   Amazon Link</a> </li>
+        <li> x1) Swivel wheel<a style="color:#8533ff" href='https://www.amazon.it/Souked-Bearing-Swivel-Universal-casters/dp/B00SHU29QI/ref=sr_1_4?__mk_it_IT=%C3%85M%C3%85%C5%BD%C3%95%C3%91&dchild=1&keywords=Swivel+wheel&qid=1596392397&s=electronics&sr=1-4'>   Amazon Link</a> </li>
+        </ul>
+        <br>
+
+<h4> CONNECTIONS: </h4>
+ <ul>
+        <li> x1) Dupont cable kit <a style="color:#8533ff" href='https://www.amazon.it/AZDelivery-Cavetti-Maschio-Femmina-Raspberry/dp/B074P726ZR/ref=sr_1_3?__mk_it_IT=%C3%85M%C3%85%C5%BD%C3%95%C3%91&dchild=1&keywords=Dupont+cable+kit&qid=1596392427&s=electronics&sr=1-3'>   Amazon Link</a> </li>
+
+        <li> x1) Jumper dupont cable <a style="color:#8533ff" href='https://www.amazon.it/ILS-pieces-Female-Jumper-Dupont/dp/B076G4MRM5/ref=sr_1_10?__mk_it_IT=%C3%85M%C3%85%C5%BD%C3%95%C3%91&dchild=1&keywords=Jumper+dupont+cable&qid=1596392477&s=electronics&sr=1-10'>   Amazon Link</a> </li>
+
+        <li> x1) USB connector <a style="color:#8533ff" href='https://www.amazon.it/WiMas-Connettore-Connector-Montaggio-Computer/dp/B0813KHWPS/ref=sr_1_22?__mk_it_IT=%C3%85M%C3%85%C5%BD%C3%95%C3%91&dchild=1&keywords=USB+connector&qid=1596392511&s=electronics&sr=1-22'>   Amazon Link</a> </li>
+
+        <li> x2) USB cables <a style="color:#8533ff" href='https://www.amazon.it/3Pezzi-Type-C-Ricarica-Trasmissione-Samsung/dp/B07RXRDT7J/ref=sr_1_1_sspa?__mk_it_IT=%C3%85M%C3%85%C5%BD%C3%95%C3%91&dchild=1&keywords=USB+cable&qid=1596392550&s=electronics&sr=1-1-spons&psc=1&spLa=ZW5jcnlwdGVkUXVhbGlmaWVyPUEyUjlFRjQzTzNYM0FLJmVuY3J5cHRlZElkPUEwODQxODk0MVpQQzRFNVRXQjRENiZlbmNyeXB0ZWRBZElkPUEwNjQ4OTI3WEQ3TzNDSVVDTzFCJndpZGdldE5hbWU9c3BfYXRmJmFjdGlvbj1jbGlja1JlZGlyZWN0JmRvTm90TG9nQ2xpY2s9dHJ1ZQ=='>   Amazon Link</a> </li>
+
+       <li> x1) Battery holder <a style="color:#8533ff" href='https://www.amazon.it/GTIWUNG-Portabatterie-Batteries-Titolare-Batteria/dp/B07ZJ4RHNZ/ref=sr_1_2_sspa?__mk_it_IT=%C3%85M%C3%85%C5%BD%C3%95%C3%91&dchild=1&keywords=Battery+holder&qid=1596392587&s=electronics&sr=1-2-spons&psc=1&spLa=ZW5jcnlwdGVkUXVhbGlmaWVyPUExWUk1MEwySDFaVFA4JmVuY3J5cHRlZElkPUEwMjI3NDQ4MVhOSFFDOEpLVlMwOSZlbmNyeXB0ZWRBZElkPUEwMTI1NjcwMlkwSDY2MDA0TTU3NyZ3aWRnZXROYW1lPXNwX2F0ZiZhY3Rpb249Y2xpY2tSZWRpcmVjdCZkb05vdExvZ0NsaWNrPXRydWU='>   Amazon Link</a> </li>
+
+       <li> x1) Terminal block connector <a style="color:#8533ff" href='https://www.amazon.it/ANGEEK-2-Pin-Terminal-Connector-5-08-301-2P/dp/B07XXXPDDY/ref=sr_1_1?__mk_it_IT=%C3%85M%C3%85%C5%BD%C3%95%C3%91&dchild=1&keywords=Terminal+block+connector&qid=1596392618&s=electronics&sr=1-1'>   Amazon Link</a> </li>
+
+       <li> x1) pin strip kit <a style="color:#8533ff" href='https://www.amazon.it/Aussel-connettore-maschio-femmina-Schermo/dp/B01M69EA9O/ref=sr_1_17?__mk_it_IT=%C3%85M%C3%85%C5%BD%C3%95%C3%91&dchild=1&keywords=pin+strip+kit&qid=1596392663&s=electronics&sr=1-17'>   Amazon Link</a> </li>
+        </ul>
+        <br>
+
+  <h4> POWER: </h4>
+<ul>
+        <li> x3) Lithium battery 3.7 V <a style="color:#8533ff" href='https://www.amazon.it/Batterie-Ricaricabili-Polimeri-Batteria-Ricambio/dp/B08C9LHJXG/ref=sr_1_14?__mk_it_IT=%C3%85M%C3%85%C5%BD%C3%95%C3%91&dchild=1&keywords=Litio+battery+3.7+V&qid=1596392746&s=electronics&sr=1-14'>   Amazon Link</a> </li>
+</ul>
+<br>
+        
+ <h4> OTHER: </h4>
+ <ul>
+        <li> x1) LM2596S DC-DC 24 V / 12 V to 5V 5A converter <a style="color:#8533ff" href='https://www.amazon.it/Acreny-Supply-Converter-Module-LM2596S/dp/B07QPLTSP1/ref=sr_1_4?__mk_it_IT=%C3%85M%C3%85%C5%BD%C3%95%C3%91&dchild=1&keywords=lm2596s+dc-dc+24v+%2F+12v+to+5v+5a+converter&qid=1596392816&s=electronics&sr=1-4'>   Amazon Link</a> </li>
+
+        <li> x1) switch <a style="color:#8533ff" href='https://www.amazon.it/Interruttore-leva-Off-pin-struttura/dp/B00BM31SUA/ref=sr_1_22?__mk_it_IT=%C3%85M%C3%85%C5%BD%C3%95%C3%91&dchild=1&keywords=interruttore+con+leva&qid=1596392906&s=electronics&sr=1-22'>   Amazon Link</a> </li>
+
+        <li> x2) resistor 1k <a style="color:#8533ff" href='https://www.amazon.it/DollaTek-Resistores-Pel%C3%ADcula-Assorted-Valores/dp/B07DJ51TT7/ref=sr_1_17?__mk_it_IT=%C3%85M%C3%85%C5%BD%C3%95%C3%91&dchild=1&keywords=resistor+1k&qid=1596392951&s=electronics&sr=1-17'>   Amazon Link</a> </li>
+
+        <li> x1) Hexagonal spacers kit <a style="color:#8533ff" href='https://www.amazon.it/Threaded-Standoffs-colonna-Maschio-Femmina-assortimento/dp/B071HPDCK8/ref=sr_1_1?__mk_it_IT=%C3%85M%C3%85%C5%BD%C3%95%C3%91&dchild=1&keywords=hexagonal+spacers+kit&qid=1596393020&s=electronics&sr=1-1-catcorr'>   Amazon Link</a> </li>
+
+        <li> x1) Screw kit <a style="color:#8533ff" href='https://www.amazon.it/INCREWAY-1050PCS-m1-4-m1-6-m2-m2-5-Computer-Portatile-assortimento/dp/B07KN4C9XV/ref=sr_1_16?__mk_it_IT=%C3%85M%C3%85%C5%BD%C3%95%C3%91&dchild=1&keywords=screw&qid=1596393133&s=electronics&sr=1-16'>   Amazon Link</a> </li>
+
+        <li> x1) Insulant tape <a style="color:#8533ff" href='https://www.amazon.it/3M-800200-80610833800-Scotch-Isolante/dp/B004Z8Y6N0/ref=sr_1_6?__mk_it_IT=%C3%85M%C3%85%C5%BD%C3%95%C3%91&dchild=1&keywords=nastro+isolante&qid=1596457058&s=electronics&sr=1-6'>   Amazon Link</a> </li>
+
+
+       </ul>
+     </div>
+   </div>
+       
+       
+
+    
+  
+
+      <p> Firstly I created a Cad of my project with fusion 360. in this cad I included two traction wheels, two wheels not attached to motors and a swivel wheel because I didn't know if my project would have worked best with four wheels (that give more stability) or with two wheels and a swiver wheel (that allaws to turn more easily). </p>
+      <br>
+      <iframe src="
+      https://gmail988804.autodesk360.com/g/shares/SH56a43QTfd62c1cd968e958ba8db393d8b3?viewState=NoIgbgDAdAjCA0IDeAdEAXAngBwKZoC40ARXAZwEsBzAOzXjQEMyzd1C0YAWL3CAZgAmggLQB2AJy4AHCN78AbCIkSAZhJH8JAY2mCIAI22Mu06WgC%2BIALpA" width="640" height="480" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true"  frameborder="0"></iframe>
+
+      <br>
+            <p> Than I made two prototypes: </p>
+        <br>
+        <br>
+
+      <div class="column">
+      <p> First prototype: </p>
+       <img src="./Final_project/page2/IMG_5279.jpeg" class="img-responsive margin" style="width:60%; border-style:solid; border-color: black; border-width:thin;" alt="git2">
+     </div>
+     <div class="column">
+     <p> Second prototype: </p>
+       <img src="./Final_project/page2/IMG_5397.jpeg" class="img-responsive margin" style="width:60%; border-style:solid; border-color: black; border-width:thin;" alt="git2">
+     </div>
+     <p> The second prototype turned better and was stable enough so I decided to use the swivel wheel for my final project. </p>
+       <br>
+   <h2> 3D PRINTING AND LASER CUTTING: <h2>
+    <p> I laser cut the two bases of my machine: </p>
+     <br>
+         <p> <ul> <li> Download my <a style="color:#8533ff" download href='./page4/Base v5.step'>STEP file </a></li> 
+          <br>
+
+      <li> Download my <a style="color:#8533ff" download href='./page4/ Base v5.stl'>STL file </a></li>
+       <br>
+     <li>Download my <a style="color:#8533ff" download href='./page4/base.dxf'> dxf file </a></p></li>
+   </ul>
+     <br>
+     <br>
+
+        <iframe src="https://gmail988804.autodesk360.com/g/shares/SH56a43QTfd62c1cd968c98ee8fbcc962f1e?viewState=NoIgbgDAdAjCA0IDeAdEAXAngBwKZoC40ARXAZwEsBzAOzXjQEMyzd1C0BjAEwGYAOAJwB2CMIC0AI06Tu4gCzdJANnGNBs8QFZc-eVt4QYSycLQBfEAF0gA" width="640" height="480" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true"  frameborder="0"></iframe>
+        <br>
+     <p> This are the components I designed on Fusion and 3D printed: </p>
+      <br>
+ <p><ul><li> Download my <a style="color:#8533ff" download href='./page5/colonna_v1.stl'>STL file </a></li></ul></p>
+ 
+ 
+       
+<iframe src="https://gmail988804.autodesk360.com/g/shares/SH56a43QTfd62c1cd96828a127061f445e4d?viewState=NoIgbgDAdAjCA0IDeAdEAXAngBwKZoC40ARXAZwEsBzAOzXjQEMyzd1C0BWAI24BYAzNwgAzALR8AxgA5cEmJIDsY7gE4ATHzHTOjACZ7pIyRFWN8IAL4gAukA" width="640" height="480" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true"  frameborder="0"></iframe>
+
+ <p><ul><li> Download my <a style="color:#8533ff" download href='./page5/sensor_holder_v1.stl'>STL file </a></li></ul></p>
+
+<iframe src="https://gmail988804.autodesk360.com/g/shares/SH56a43QTfd62c1cd96822e1adec6fe75225?viewState=NoIgbgDAdAjCA0IDeAdEAXAngBwKZoC40ARXAZwEsBzAOzXjQEMyzd1C0BjCANgDMAHLj4ATALQB2AJw8JYgCyLcYgEYCJMVRHkr5nAes4wVaAL4gAukA" width="640" height="480" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true"  frameborder="0"></iframe>
+
+ <p><ul><li> Download my <a style="color:#8533ff" download href='./page5/ Base v5.stl'>STL file </a></li> </ul></p>
+
+
+       <iframe src="
+       https://gmail988804.autodesk360.com/g/shares/SH56a43QTfd62c1cd9685d3a95f55159dd0f?viewState=NoIgbgDAdAjCA0IDeAdEAXAngBwKZoC40ARXAZwEsBzAOzXjQEMyzd1C0BmAExkYDZuAMwgBaAEyMALONFTcAdgWiAnEIUxRADm4KArDCH8YEPVKloAviAC6QA" width="640" height="480" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true"  frameborder="0"></iframe>
+       <br>
+
+       <p> To laser cut and 3D print my components I have been helped by Centro Piaggio labs. </p>
+ <br>
+ <br>
+
+    <h4> MECCANICAL ARM: <h4>
+      <p> I found the meccanical arm I wanted to include in my project online but I had to modify some parts to fit my project. Here is a <a style="color:#8533ff" href='https://howtomechatronics.com/tutorials/arduino/diy-arduino-robot-arm-with-smartphone-control/'>link</a> to the page where I found the meccanical arm I used. </p> 
+
+       <p> 3D printed parts: </p>
+ <img src="./Final_project/page3/IMG_5396.jpg" class="img-responsive margin" style="width:60%; border-style:solid; border-color: black; border-width:thin;" alt="git2">
+  <p> Motors: </p>
+  <img src="./Final_project/page3/image_2.JPG" class="img-responsive margin" style="width:60%; border-style:solid; border-color: black; border-width:thin;" alt="git2">
+  <p> Assembling: </p>
+       <img src="./Final_project/page3/image0.jpeg" class="img-responsive margin" style="width:60%; border-style:solid; border-color: black; border-width:thin;" alt="git2">
+       <img src="./Final_project/page3/image1.jpeg" class="img-responsive margin" style="width:60%; border-style:solid; border-color: black; border-width:thin;" alt="git2">
+       <img src="./Final_project/page3/image2.jpeg" class="img-responsive margin" style="width:60%; border-style:solid; border-color: black; border-width:thin;" alt="git2">
+       <img src="./Final_project/page3/image3.jpeg" class="img-responsive margin" style="width:60%; border-style:solid; border-color: black; border-width:thin;" alt="git2">
+       <img src="./Final_project/page3/image4.jpeg" class="img-responsive margin" style="width:60%; border-style:solid; border-color: black; border-width:thin;" alt="git2">
+       <img src="./Final_project/page3/image5.jpeg" class="img-responsive margin" style="width:60%; border-style:solid; border-color: black; border-width:thin;" alt="git2">
+       <img src="./Final_project/page3/image6.jpeg" class="img-responsive margin" style="width:60%; border-style:solid; border-color: black; border-width:thin;" alt="git2">
+
+
+     <br> 
+     <h4>ELECTRONICS</h4>
+    <p>At first I used the Metro board for this project because I nedded many pins and this board has more pins that can be used for basically any purpose, but than I realised that The Huzza board might be more useful since it can be connect to wifi. <br> I nedeed to unse 3 sensors and drive 2 stepper motors and 4 servo motors at the same time: this could require 14 output pins (and the Huzza only has 10) if I connected everything directly to the board so I had to find a solution to use less pin as posible.</p>
+     <br>
+     <p>This is the solutions I found: </p>
+     <ul>
+      <li> Use an A4988 Servo driver </li>
+      <p> This driver allaws you to run up to 16 servo motors usigng only 1 uoutput pin, 1 SCL and 1 SDA pin. </p>
+      <li> use a protoboard </li>
+        <p> I soldered some GROUND, +3V, SCL and SDA connection on a protoboard so that I could connect my sensor to those and instead of using more pins.</p>
+      </ul>
+      <br>
+      <br> 
+      <p> This are my circuit diagrams: </p>
+
+      
+         <img src="./Fritz_Power.png" class="img-responsive margin" style="width:60%;border-style:solid; border-color: black; border-width:thin;" alt="git4">
+       
+       
+         <img src="./Fritz_Servo_and_Laser.png" class="img-responsive margin" style="width:60%;border-style:solid; border-color: black; border-width:thin;" alt="git5">
+       
+       
+         <img src="./Fritz_Stepper.png" class="img-responsive margin" style="width:60%;border-style:solid; border-color: black; border-width:thin;" alt="git6">
+
+
+         <p> This is the protoboard I soldered: </p>
+
+      
+<img src="./protoboard.jpeg" class="img-responsive margin" style="width:60%;border-style:solid; border-color: black; border-width:thin;" alt="git6">
+<br>
+ <p> Our stepper motors need 12 volts to make a strong torque, since my machine was heavy I nedded the max possible power for my motors so I used three lithium batteries of 3.5 each. </p>
+  <br>
+   <p> To drive the stepper motors with the A4988 driver I have found these two websites very helpuful:
+    <br> <ul> <li> <a style="color:#8533ff" href='https://www.makerguides.com/a4988-stepper-motor-driver-arduino-tutorial/' > Stepper Motor driver Guide </a></li>
+       <li> <a style="color:#8533ff" href=' http://www.zyltech.com/arduino-cnc-shield-instructions/ '> cnc shield guide</a></li></ul>
+<br>
+
+    <p> This is my final circuit, the wires where too many so it was easy to get confused, plug a wire in the wrong place and burn a motor  so I used some insulant tape to make the circuit easier to understand. After I made a short and burnt a motor driver because a ground and a 12 V connection where both touching a screw I also covered the screws with insulant tape. </p>
+<br>
+
+          <img src="./circuit.jpeg" class="img-responsive margin" style="width:60%;border-style:solid; border-color: black; border-width:thin;" alt="git6">
+          <br>
+          <br>
+          <h4> ARDUINO CODING <h4>
+            <p> To write my arduino code I divided my project into it's main 3 parts: stepper motors circuit, meccanical arm and sensor. I started by looking at the examples and modifyed them to fit my project. I used "dual sensor" from the library Adafruit_VL53LOX and I added one sensor. I also used the example "servo" from the library Adafruit_PWMServoDriver. after i tried all those separately I started writing my own code including in it part of those examples and defining my own funcitions.
+           <p> This is the final version of my arduino code: </p>
+           <pre>
+            <code class="language_arduino">
+             
+#include < Adafruit_VL53L0X.h>
+#include < Adafruit_PWMServoDriver.h>
+/* Stepper motor defines */
+
+#define STEPS_PER_REVOLUTION 200  // NEMA 17 has 200 Steps per revolution
+#define  MM_WHEEL_LENGTH  200     // Space per revolution
+#define STEPS_TO_TURN  170        // Motor steps to turn 90 degree
+
+#define STP_EN    21              // Enable motor current
+
+//Direction pin - Left and Right wheel
+#define X_DIR     13
+#define Y_DIR     33
+
+//Step pins - Left and Right wheel
+#define X_STP     12
+#define Y_STP     27
+
+/* Laser sensors defines */
+#define SHT_LOX1 14
+#define SHT_LOX2 32
+#define SHT_LOX3 15
+
+// Addresses for the three VL53L0X sensors
+#define LOX1_ADDRESS 0x30
+#define LOX2_ADDRESS 0x31
+#define LOX3_ADDRESS 0x32
+
+// Calibration Values for the three VL53L0X sensors (before starting make sure you claibrate your sensors)
+#define LOX1_CALIB   -7
+#define LOX2_CALIB   -30
+#define LOX3_CALIB   -10
+
+#define VL53_OUT_OF_RANGE 1500
+
+
+//defines for servo motors
+// Depending on your servo make, the pulse width min and max may vary, you
+// want these to be as small/large as possible without hitting the hard stop
+// for max range. You'll have to tweak them as necessary to match the servos you
+// have!
+#define NUMSERVOS 16   // Total number of servo in the system
+#define SERVOMIN  410 // This is the 'minimum' pulse length count (out of 4096)
+#define SERVOMAX  820 // This is the 'maximum' pulse length count (out of 4096)
+#define USMIN  600.0 // This is the rounded 'minimum' microsecond length of the PWM Pulse
+#define USMAX  2400.0 // This is the rounded 'maximum' microsecond length of the PWM Pulse
+#define SERVO_FREQ 45 // Analog servos run at ~100 Hz updates
+#define SERVO_USEC_PERIOD (1000000 / SERVO_FREQ)// Servo period in microseconds
+#define SERVO_OEPIN 26
+
+int ServoDelay[6] = { 20, 20, 5, 5, 5, 10} ; // Each Servo moves better at his own speed
+
+// objects for the vl53l0x
+Adafruit_VL53L0X lox1 = Adafruit_VL53L0X();
+Adafruit_VL53L0X lox2 = Adafruit_VL53L0X();
+Adafruit_VL53L0X lox3 = Adafruit_VL53L0X();
+
+//use this variables to store sensors values (calibrated)
+int VL53_Calib_Readout_1;
+int VL53_Calib_Readout_2;
+int VL53_Calib_Readout_3;
+
+// objects for PCA9685 Servo driver
+// called this way, it uses the default address 0x40
+Adafruit_PWMServoDriver pwm = Adafruit_PWMServoDriver();
+
+/* Stepper motor related variables */
+int mot_steps ;
+int last_turn_dir = 0; // variable for scanning right=0 left=1
+int wall_warning = 0; // multi level wall warning . to avoid false alarms
+
+// Laser Sensors variables
+// this holds the measurement (not calibrated I have found out that there is an ofset in the meurments)
+VL53L0X_RangingMeasurementData_t measure1;
+VL53L0X_RangingMeasurementData_t measure2;
+VL53L0X_RangingMeasurementData_t measure3;
+
+// Servo variables
+int Current_Servo_Position[NUMSERVOS];
+
+/* Stepper motor related functions */
+
+void move_forward(int speed, int mm_space) // convert distances into steps and move both wheel forward
+{
+  digitalWrite(STP_EN, LOW);
+  digitalWrite(X_DIR, HIGH);
+  digitalWrite(Y_DIR, HIGH);
+  mot_steps = (STEPS_PER_REVOLUTION * mm_space) / MM_WHEEL_LENGTH;
+  for (int i = 0; i <= mot_steps; i++) {
+    digitalWrite(X_STP, HIGH);
+    delayMicroseconds(speed);
+    digitalWrite(Y_STP, HIGH);
+    delayMicroseconds(speed);
+    digitalWrite(X_STP, LOW);
+    delayMicroseconds(speed);
+    digitalWrite(Y_STP, LOW);
+    delayMicroseconds(speed);
+  }
+  digitalWrite(STP_EN, HIGH);
+}
+
+
+void turn_right(int speed) //turn right by making the right wheel move forward and the left one move back
+{
+  digitalWrite(STP_EN, LOW);
+  digitalWrite(X_DIR, HIGH);
+  digitalWrite(Y_DIR, LOW);
+  for (int i = 0; i <= STEPS_TO_TURN; i++) {
+    digitalWrite(X_STP, HIGH);
+    delayMicroseconds(speed);
+    digitalWrite(Y_STP, HIGH);
+    delayMicroseconds(speed);
+    digitalWrite(X_STP, LOW);
+    delayMicroseconds(speed);
+    digitalWrite(Y_STP, LOW);
+    delayMicroseconds(speed);
+  }
+  digitalWrite(STP_EN, HIGH);
+}
+
+void turn_left(int speed) //turn left by making the left wheel move forward and the right one move back
+{
+  digitalWrite(STP_EN, LOW);
+  digitalWrite(X_DIR, LOW);
+  digitalWrite(Y_DIR, HIGH);
+  for (int i = 0; i <= STEPS_TO_TURN; i++) {
+    digitalWrite(X_STP, HIGH);
+    delayMicroseconds(speed);
+    digitalWrite(Y_STP, HIGH);
+    delayMicroseconds(speed);
+    digitalWrite(X_STP, LOW);
+    delayMicroseconds(speed);
+    digitalWrite(Y_STP, LOW);
+    delayMicroseconds(speed);
+  }
+  digitalWrite(STP_EN, HIGH);
+}
+
+// Set Addresses to communicate with laser Sensors
+void setID() {
+  // all reset
+  digitalWrite(SHT_LOX1, LOW);
+  digitalWrite(SHT_LOX2, LOW);
+  digitalWrite(SHT_LOX3, LOW);
+  delay(10);
+  // all unreset
+  digitalWrite(SHT_LOX1, HIGH);
+  digitalWrite(SHT_LOX2, HIGH);
+  digitalWrite(SHT_LOX3, HIGH);
+  delay(10);
+
+  // activating LOX1 and reseting LOX2
+  digitalWrite(SHT_LOX1, HIGH);
+  digitalWrite(SHT_LOX2, LOW);
+  digitalWrite(SHT_LOX3, LOW);
+  // initing LOX1
+  if (!lox1.begin(LOX1_ADDRESS)) {
+    Serial.println(F("Failed to boot first VL53L0X"));
+  }
+  delay(10);
+
+  // activating LOX2
+  digitalWrite(SHT_LOX2, HIGH);
+  delay(10);
+
+  //initing LOX2
+  if (!lox2.begin(LOX2_ADDRESS)) {
+    Serial.println(F("Failed to boot second VL53L0X"));
+  }
+
+  // activating LOX3
+  digitalWrite(SHT_LOX3, HIGH);
+  delay(10);
+
+  //initing LOX3
+  if (!lox3.begin(LOX3_ADDRESS)) {
+    Serial.println(F("Failed to boot third VL53L0X"));
+  }
+}
+
+
+void init_steppers() { // initialize motors
+
+  // put stp and dir X and Y pins in output
+  pinMode(X_DIR, OUTPUT); pinMode(X_STP, OUTPUT);
+  pinMode(Y_DIR, OUTPUT); pinMode(Y_STP, OUTPUT);
+  pinMode(STP_EN, OUTPUT);
+  digitalWrite(STP_EN, HIGH);
+}
+
+
+void init_sensors() { //initializig sensors
+  pinMode(SHT_LOX1, OUTPUT);
+  pinMode(SHT_LOX2, OUTPUT);
+  pinMode(SHT_LOX3, OUTPUT);
+
+  Serial.println("Shutdown pins inited...");
+  digitalWrite(SHT_LOX1, LOW);
+  digitalWrite(SHT_LOX2, LOW);
+  digitalWrite(SHT_LOX3, LOW);
+  Serial.println("All sensors in reset mode...(pins are low)");
+
+  Serial.println("Starting...");
+  setID();
+}
+
+
+void init_ServoDriver() { //initialize servo driver
+  // put your setup code here, to run once:
+  pinMode(SERVO_OEPIN, OUTPUT);
+  digitalWrite(SERVO_OEPIN, LOW);
+  pwm.begin();
+  /*
+     In theory the internal oscillator (clock) is 25MHz but it really isn't
+     that precise. You can 'calibrate' this by tweaking this number until
+     you get the PWM update frequency you're expecting!
+     The int.osc. for the PCA9685 chip is a range between about 23-27MHz and
+     is used for calculating things like writeMicroseconds()
+     Analog servos run at ~50 Hz updates, It is importaint to use an
+     oscilloscope in setting the int.osc frequency for the I2C PCA9685 chip.
+     1) Attach the oscilloscope to one of the PWM signal pins and ground on
+        the I2C PCA9685 chip you are setting the value for.
+     2) Adjust setOscillatorFrequency() until the PWM update frequency is the
+        expected value (50Hz for most ESCs)
+     Setting the value here is specific to each individual I2C PCA9685 chip and
+     affects the calculations for the PWM update frequency.
+     Failure to correctly set the int.osc value will cause unexpected PWM results
+  */
+  pwm.setOscillatorFrequency(25500000);
+  pwm.setPWMFreq(SERVO_FREQ);  // Analog servos run at ~100 Hz updates
+  delay(10);
+
+}
+
+int AngletoPWM(int angle) // this function converts an angle into the rigth values for the pwm
+{
+  float usecs = ((float)(angle) / 180.0) * (USMAX - USMIN) + USMIN;
+  return ((int)((usecs * 4096.0) / SERVO_USEC_PERIOD));
+
+}
+
+void SetServoPos(int servoindex, int angle) //changes the angle of a servo and update the variable that stores that datum
+{
+  pwm.setPWM(servoindex, 0, AngletoPWM(angle));
+  Current_Servo_Position[servoindex] = angle;
+}
+
+void GotoServoPos(int servoindex, int angle) //gradually go to to an angle
+{
+  int StartPWM = AngletoPWM(Current_Servo_Position[servoindex]);
+  int EndPWM = AngletoPWM(angle);
+  if (EndPWM > StartPWM) {
+    for (int j = StartPWM; j <= EndPWM; j++) { //go to an angle if the current angle is smaller than the required one
+      pwm.setPWM(servoindex, 0, j);
+      delay(ServoDelay[servoindex]); // Each servo has its own speed
+    }
+  }
+  else if (EndPWM < StartPWM)
+    for (int j = StartPWM; j >= EndPWM; j--) { //go to an angle if the current angle is bigger than the required one
+      pwm.setPWM(servoindex, 0, j);
+      delay(ServoDelay[servoindex]); // Each servo has its own speed
+    }
+  Current_Servo_Position[servoindex] = angle;
+}
+
+
+void Servo_Idle() { // position of the mecanical arm when is not picking
+
+  SetServoPos(0, 90);
+  SetServoPos(1, 90);
+  SetServoPos(2, 90);
+  SetServoPos(3, 90);
+  SetServoPos(4, 75);
+}
+
+
+void ServoPick() { // sequence to pick an object
+  GotoServoPos(0, 30);
+  GotoServoPos(3, 10);
+  GotoServoPos(1, 160);
+  GotoServoPos(4, 25);
+  delay(1000);
+  GotoServoPos(0, 105);
+  GotoServoPos(1, 15);
+  GotoServoPos(3, 150);
+  GotoServoPos(4, 80);
+
+
+}
+
+
+
+void Read_Laser_sensors() {
+
+  lox1.rangingTest(&measure1, false); // pass in 'true' to get debug data printout!
+  lox2.rangingTest(&measure2, false); // pass in 'true' to get debug data printout!
+  lox3.rangingTest(&measure3, false); // pass in 'true' to get debug data printout!
+
+  // print sensor one reading
+  Serial.print("1: ");
+  if (measure1.RangeStatus != 4) {    // if not out of range
+    VL53_Calib_Readout_1 = measure1.RangeMilliMeter + LOX1_CALIB;
+    Serial.print(VL53_Calib_Readout_1);
+  } else {
+    VL53_Calib_Readout_1 = VL53_OUT_OF_RANGE;
+    Serial.print("Out of range");
+  }
+  if (VL53_Calib_Readout_1 > VL53_OUT_OF_RANGE) { // for some strange reason it may happen that instead of out of range whe have a very big reading
+    VL53_Calib_Readout_1 = VL53_OUT_OF_RANGE;
+  }
+
+  Serial.print(" ");
+
+  Serial.print("2: ");
+  if (measure2.RangeStatus != 4) {    // if not out of range
+    VL53_Calib_Readout_2 = measure2.RangeMilliMeter + LOX2_CALIB;
+    Serial.print(VL53_Calib_Readout_2);
+  } else {
+    VL53_Calib_Readout_2 = VL53_OUT_OF_RANGE;
+    Serial.print("Out of range");
+  }
+  if (VL53_Calib_Readout_2 > VL53_OUT_OF_RANGE) { // for some strange reason it may happen that instead of out of range whe have a very big reading
+    VL53_Calib_Readout_2 = VL53_OUT_OF_RANGE;
+  }
+
+  Serial.print(" ");
+
+  // print sensor three reading
+  Serial.print("3: ");
+  if (measure3.RangeStatus != 4) {    // if not out of range
+    VL53_Calib_Readout_3 = measure3.RangeMilliMeter + LOX3_CALIB;
+    Serial.print(VL53_Calib_Readout_3);
+  } else {
+    VL53_Calib_Readout_3 = VL53_OUT_OF_RANGE;
+    Serial.print("Out of range");
+  }
+  if (VL53_Calib_Readout_3 > VL53_OUT_OF_RANGE) { // for some strange reason it may happen that instead of out of range whe have a very big reading
+    VL53_Calib_Readout_3 = VL53_OUT_OF_RANGE;
+  }
+}
+
+
+
+void Scan_and_move() { //read the values of the sensor and decide if there is an object an obstacle or nothing in your path
+  int DiffData = 0;
+  Read_Laser_sensors();
+  if ((VL53_Calib_Readout_1 > 600) and (VL53_Calib_Readout_2 > 600)) // there is nothing near the machine can move forward
+  {
+    move_forward(2000, 500);
+
+  }
+
+
+  else {
+    DiffData = abs(VL53_Calib_Readout_1 - VL53_Calib_Readout_2);
+
+    if (DiffData > 50) // object detected, pick the object
+    {
+      move_forward(2000, (VL53_Calib_Readout_2 - 80));
+      ServoPick();
+    }
+
+    else  // obstacle detected, avoid it
+    { // turn one time to the right and one to the left so that you can scann the whole room
+
+      if (last_turn_dir == 0)  //this means you have just turned to the right, turn to the left
+      {
+        turn_left(3000);
+        move_forward(2000, 100);
+        turn_left(3000);
+        last_turn_dir = 1;
+      }
+      else {  //this means you have just turned to the left, turn to the right
+        turn_right(3000);
+        move_forward(2000, 100);
+        turn_right(3000);
+        last_turn_dir = 0;
+      }
+    }
+  }
+
+}
+
+
+void setup() {
+
+  init_sensors();
+  init_ServoDriver();
+  init_steppers();
+  Servo_Idle();
+
+}
+
+
+void loop() { //scan, decide how to move, move and repeat this in a loop
+
+  Scan_and_move();
+  delay(10);
+
+}
+
+ </code>
+</pre>
+
+
+
+      <h2> <b> RESOURCES: </b></h2>
+      <p> DATASHEETS 
+      <ul> 
+         <li> <a style="color:#8533ff" href='https://www.omc-stepperonline.com/download/17HS13-0404S1.pdf' > Nema 17HS13-0404S1 </a></li>
+      
+       <li> <a style="color:#8533ff" href='https://components101.com/motors/mg90s-metal-gear-servo-motor' > 6Pcs MG90S Micro Servo Motor </a></li>
+       <li> <a style="color:#8533ff" href='https://components101.com/motors/mg996r-servo-motor-datasheet' > 2Pcs MG996R Servo Motor </a></li>
+         <li> <a style="color:#8533ff" href='https://cdn-shop.adafruit.com/product-files/3269/esp32_datasheet_en_0.pdf' >Adafruit ESP32 Feather </a></li>
+         <li> <a style="color:#8533ff" href='https://components101.com/modules/a4988-stepper-motor-driver-module' > A4988 Motor Driver</a></li>
+
+         <li> <a style="color:#8533ff" href='https://www.mouser.it/datasheet/2/302/PCA9685-1127478.pdf' >Servo driver PCA9685</a></li>
+
+         </ul>
+         <br>
+
+        USEFUL LINKS
+        <ul>
+       <li> <a style="color:#8533ff" href='https://learn.adafruit.com/adafruit-huzzah32-esp32-feather/pinouts' > ESP32 pinout  </a></li>
+       <li> <a style="color:#8533ff" href='https://www.makerguides.com/a4988-stepper-motor-driver-arduino-tutorial/' > Stepper Motor driver Guide </a></li>
+       <li> <a style="color:#8533ff" href=' http://www.zyltech.com/arduino-cnc-shield-instructions/ '> cnc shield guide</a></li>
+         <li> <a style="color:#8533ff" href='https://learn.adafruit.com/16-channel-pwm-servo-driver?view=all' >Multi Servo driver guide </a></li>
+      </ul>
+       
+  
+
+     </div>
+   </div>
+   </body>
+   </html>
+
+</div>
