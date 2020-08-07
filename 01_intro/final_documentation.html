@@ -171,13 +171,13 @@ function closeNav() {
     
   
 
-      <p> Firstly I created a Cad of my project with fusion 360. In this CAD I included two traction wheels, two wheels not attached to motors and a swivel wheel because I didn't know if my project would have worked best with four wheels (that give more stability) or with two wheels and a swivel wheel (that allaws to turn more easily). </p>
+      <p> Firstly I created a Cad of my project with fusion 360. In this CAD I included two traction wheels, two wheels not attached to motors and a swivel wheel because I didn't know if my project would have worked best with four wheels (that give more stability) or with two wheels and a swivel wheel (that allows to turn more easily). </p>
       <br>
       <iframe src="
       https://gmail988804.autodesk360.com/g/shares/SH56a43QTfd62c1cd968e958ba8db393d8b3?viewState=NoIgbgDAdAjCA0IDeAdEAXAngBwKZoC40ARXAZwEsBzAOzXjQEMyzd1C0YAWL3CAZgAmggLQB2AJy4AHCN78AbCIkSAZhJH8JAY2mCIAI22Mu06WgC%2BIALpA" width="640" height="480" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true"  frameborder="0"></iframe>
 
       <br>
-            <p> Than I made two prototypes: </p>
+            <p> Then I made two prototypes: </p>
         <br>
         <br>
 
@@ -248,12 +248,12 @@ function closeNav() {
 
      <br> 
      <h4>ELECTRONICS</h4>
-    <p>At first I used the Metro board for this project because I nedded many pins and this board has more pins that can be used for basically any purpose, but than I realised that The Huzza board might be more useful since it can be connect to wifi. <br> I nedeed to unse 3 sensors and drive 2 stepper motors and 4 servo motors at the same time: this could require 14 output pins (and the Huzza only has 10) if I connected everything directly to the board so I had to find a solution to use less pin as posible.</p>
+    <p>At first I used the Metro board for this project because I nedded many pins and this board has more pins that can be used for basically any purpose, but then I realised that The Huzzah board might be more useful since it can be connected to wifi. <br> I needed to use 3 sensors and drive 2 stepper motors and 4 servo motors at the same time: this could require 14 output pins (and the Huzzah only has 10) if I connected everything directly to the board so I had to find a solution to use less pin as posible.</p>
      <br>
      <p>This is the solutions I found: </p>
      <ul>
-      <li> Use an PCA9685 Servo driver </li>
-      <p> This driver allaws you to run up to 16 servo motors usigng only 1 uoutput pin, 1 SCL and 1 SDA pin. </p>
+      <li> Use a PCA9685 Servo driver </li>
+      <p> This driver allows you to run up to 16 servo motors using only 1 output pin, 1 SCL and 1 SDA pin. </p>
       <li> use a protoboard </li>
         <p> I soldered some GROUND, +3V, SCL and SDA connection on a protoboard so that I could connect my sensor to those and instead of using more pins.</p>
       </ul>
@@ -276,21 +276,21 @@ function closeNav() {
       
 <img src="./protoboard.jpeg" class="img-responsive margin" style="width:60%;border-style:solid; border-color: black; border-width:thin;" alt="git6">
 <br>
- <p> Our stepper motors need 12 volts to make a strong torque, since my machine was heavy I nedded the max possible power for my motors so I used three lithium batteries of 3.5 each. </p>
+ <p> Our stepper motors need 12 volts to make a strong torque, since my machine was heavy I nedded the max possible power for my motors so I used three lithium batteries of 3.5 V each. </p>
   <br>
-   <p> To drive the stepper motors with the A4988 driver I have found these two websites very helpuful:
+   <p> To drive the stepper motors with the A4988 driver I have found these two websites very helpful:
     <br> <ul> <li> <a style="color:#8533ff" href='https://www.makerguides.com/a4988-stepper-motor-driver-arduino-tutorial/' > Stepper Motor driver Guide </a></li>
        <li> <a style="color:#8533ff" href=' http://www.zyltech.com/arduino-cnc-shield-instructions/ '> cnc shield guide</a></li></ul>
 <br>
 
-    <p> This is my final circuit, the wires where too many so it was easy to get confused, plug a wire in the wrong place and burn a motor  so I used some insulant tape to make the circuit easier to understand. After I made a short and burnt a motor driver because a ground and a 12 V connection where both touching a screw I also covered the screws with insulant tape. </p>
+    <p> This is my final circuit, the wires were too many so it was easy to get confused, plug a wire in the wrong place and burn a motor  so I used some insulant tape to make the circuit easier to understand. After I made a short and burnt a motor driver because a ground and a 12 V connection where both touching a screw I also covered the screws with insulant tape. </p>
 <br>
 
           <img src="./circuit.jpeg" class="img-responsive margin" style="width:60%;border-style:solid; border-color: black; border-width:thin;" alt="git6">
           <br>
           <br>
           <h4> ARDUINO CODING <h4>
-            <p> To write my arduino code I divided my project into it's main 3 parts: stepper motors circuit, mechanical arm and sensor. I started by looking at the examples and modifyed them to fit my project. I used "dual sensor" from the library Adafruit_VL53LOX and I added one sensor. I also used the example "servo" from the library Adafruit_PWMServoDriver. After I tried all those separately I started writing my own code including in it part of those examples and defining my own functions.
+            <p> To write my arduino code I divided my project into it's main 3 parts: stepper motors circuit, mechanical arm and sensor. I started by looking at the examples and modifyed them to fit my project. I used "dual sensor" from the library Adafruit_VL53LOX and I added one sensor. I also used the example "servo" from the library Adafruit_PWMServoDriver. After I tried all those separately I started writing my own code using parts of the examples and defining my own functions.
            <p> This is the final version of my arduino code: </p>
            <pre>
             <code class="language_arduino">
