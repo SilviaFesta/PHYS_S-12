@@ -61,12 +61,12 @@ function closeNav() {
     <h4> <b> IR PHOTOTRANSISTOR </b></h4>
     <br>
  <ul>
-      <li><h4> SENSOR 1: detecting the dis</h4>  </li> </ul>
+      <li><h4> SENSOR 1: detecting the distance </h4>  </li> </ul>
 
-      <p> For my final project I need a sensor that can detect obstacles so I decided to create a sensor that is able to detect the presence of an obstacle and one that detects the distance of the obstacle. To crate those sensors I have used the infrared phototransistor present in our kit and an infrared led. <br> To build the circuit I have followed the scheme present on our course webpage. However I have changed many resistors until I have found the values of resistance that best allow to read a clear signal.  
+      <p> For my final project I need a sensor that can detect obstacles so I decided to create a sensor that is able to detect the presence of an obstacle and one that detects the distance of the obstacle. To create those sensors I have used the infrared phototransistor present in our kit and an infrared LED. <br> To build the circuit I have followed the scheme present on our course webpage. However I have changed many resistors until I have found the values of resistance that best allow to read a clear signal.  
         <br> <br> </p>
 
-         <p> this is my circuit: </p>
+         <p> This is my circuit: </p>
        
         <img src="./assign6/circuit1.jpeg" class="img-responsive margin" style="width:50%;border-style:solid; border-color: black; border-width:thin;" alt="image0">
 
@@ -86,10 +86,10 @@ function closeNav() {
         }
         </code>
       </pre>
-       <p> This program seemd not to work but after many tries I have discovered why: <br>
+       <p> This program seemed not to work but after many tries I have discovered why: <br>
            1) The phototransistor was detecting infrared light from the sun <br> SOLUTION: close the window blinds <br>
            2) the phototransistor was detecting infrared ligth from my computer <br> SOLUTION: Move the circuit as far as possible from the computer <br>
-           3) The phototransistor detected infrared ligth beams directly from the LED instead of the reflected ones <br> SOLUTION: cover both the phototransistor and the led with a pice of a staw so that all the light from the led would have been directed up and the phototransistor would only detect the reflected light: </p>
+           3) The phototransistor detected infrared ligth beams directly from the LED instead of the reflected ones <br> SOLUTION: cover both the phototransistor and the LED with a piece of a straw so that all the light from the LED would have been directed up and the phototransistor would only detect the reflected light: </p>
            <div class="row">
             <div class="column">
            <img src="./assign6/led1.jpeg" class="img-responsive margin" style="width:60%;border-style:solid; border-color: black; border-width:thin;" alt="image0">
@@ -98,7 +98,7 @@ function closeNav() {
            <img src="./assign6/led2.jpeg" class="img-responsive margin" style="width:60%;border-style:solid; border-color: black; border-width:thin;" alt="image0">
          </div>
          </div>
-         <p> 4) Not even this solution seemed to work because the straw was transparent to infrared light so I covered the pices of stow with insulant tape. <br> After this my sensor finally worked </p>
+         <p> 4) Not even this solution seemed to work because the straw was transparent to infrared light so I covered the pieces of straw with insulant tape. <br> After this my sensor finally worked </p>
 
          <img src="./assign6/led3.jpeg" class="img-responsive margin" style="width:60%;border-style:solid; border-color: black; border-width:thin;" alt="image0">
           <img src="./assign6/sensor_values.png" class="img-responsive margin" style="width:60%" alt="image0">
@@ -117,7 +117,7 @@ function closeNav() {
        
 <ul>
       <li><h4> SENSOR 2: detecting the presence of an obstacle </h4>  </li> </ul>
-      <p> to detect only the presence of an obstacle I pointed the led straght to the phototransistor so that when there are no obstacle between the led and the phototransistor the phototransistor woul read very high values and when an obstacle blocks the infrared light beams the phototransistor would detect very low values (I have used the same simple arduino program as for sensor 1).</p>
+      <p> To detect only the presence of an obstacle I pointed the LED straght to the phototransistor so that when there are no obstacles between the LED and the phototransistor, the phototransistor would read very high values and when an obstacle blocks the infrared light beams the phototransistor would detect very low values (I have used the same simple arduino program as for sensor 1).</p>
         
 
 <div class="row">

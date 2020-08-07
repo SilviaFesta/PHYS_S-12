@@ -56,7 +56,7 @@ function closeNav() {
     <br>
     <br>
 
-      <p>In this lecture we learnt how to make our board communicate with other devices both with wire connections and wireless. <br>For this week assignments I wanted to controll the machine I made for the previous lecture through wifi. I used the metro board to run the stepper motors so I neded my Metro board to comunicate with my ESP32 board. <br> <br>
+      <p>In this lecture we learnt how to make our board communicate with other devices both with wire connections and wireless. <br>For this week assignments I wanted to control the machine I made for the previous lecture through WiFi. I used the Metro board to run the stepper motors so I needed my Metro board to comunicate with my ESP32 board. <br> <br>
       Firstly I made my ESP32 communicate with my Metro board through wire connections and wrote a simple program to see if the connection worked. <br> This is my circuit: </p>  
    
         <img src="./assign8/circuit1.jpeg" class="img-responsive margin" style="width:60%;border-style:solid; border-color: black; border-width:thin;" alt="git1">
@@ -110,14 +110,14 @@ void loop() {
 }
           </code>
         </pre>
-        <p> when I saw that the wire connection was working I tried to connect my ESP32 to the WiFi and try to light the led in this way. <br> I uploaded the SimpleWiFiSever example to my ESP32. This program sends high signal to pin 5 when press "click here to turn the LED on" and low signal when you press "click here tu turn the LED off" so I uploaded the same program as before to my Metro, infct this programs turns on the led when the board recives "high" from pin 7 (the signal from the other board) and turns it off when pin 7 recives "low". <br>This is my circuit working: </p> 
+        <p> When I saw that the wire connection was working I tried to connect my ESP32 to the WiFi and try to light the LED in this way. <br> I uploaded the SimpleWiFiSever example to my ESP32. This program sends high signal to pin 5 when you press "click here to turn the LED on" and low signal when you press "click here to turn the LED off" so I uploaded the same program as before to my Metro, infact this programs turns on the LED when the board receives "high" from pin 7 (the signal from the other board) and turns it off when pin 7 recives "low". <br>This is my circuit working: </p> 
 
 
 
  <video controls style="width:50%; min-width:300px; align-items: center;" >
             <source src="./assign8/wifi.mov" type="video/mp4">
 </video> 
- <p> I was now ready to controll my litte car through wifi. I changed the ESP32 example porogram juto make the web page show the right comands: <br>  This is my code: </p>
+ <p> I was now ready to control my litte car through WiFi. I changed the ESP32 example program to make the web page show the right commands: <br>  This is my code: </p>
 
  
           <pre style="margin: 4%; border-style:solid; border-color: gray; border-width:thin; border-radius: 20px">
@@ -241,7 +241,7 @@ void loop(){
 }
   </code>
 </pre>
-<p> Than I wrote a program to make the setpper motors run in two different directions depending on the ESP32 board signals <br> This is my program: </p>
+<p> Then I wrote a program to make the stepper motors run in two different directions depending on the ESP32 board signals <br> This is my program: </p>
 
   
           <pre style="margin: 4%; border-style:solid; border-color: gray; border-width:thin; border-radius: 20px">
