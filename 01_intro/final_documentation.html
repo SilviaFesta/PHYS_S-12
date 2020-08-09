@@ -248,7 +248,7 @@ function closeNav() {
 
      <br> 
      <h4>ELECTRONICS</h4>
-    <p>At first I used the Metro board for this project because I nedded many pins and this board has more pins that can be used for basically any purpose, but then I realised that The Huzzah board might be more useful since it can be connected to wifi. <br> I needed to use 3 sensors and drive 2 stepper motors and 4 servo motors at the same time: this could require 14 output pins (and the Huzzah only has 10) if I connected everything directly to the board so I had to find a solution to use less pin as posible.</p>
+    <p>At first I used the Metro board for this project because I needed many pins and this board has more pins that can be used for basically any purpose, but then I realised that The Huzzah board might be more useful since it can be connected to wifi. <br> I needed to use 3 sensors and drive 2 stepper motors and 4 servo motors at the same time: this could require 14 output pins (and the Huzzah only has 10) if I connected everything directly to the board so I had to find a solution to use less pin as possible.</p>
      <br>
      <p>This is the solutions I found: </p>
      <ul>
@@ -290,7 +290,7 @@ function closeNav() {
           <br>
           <br>
           <h4> ARDUINO CODING <h4>
-            <p> To write my arduino code I divided my project into it's main 3 parts: stepper motors circuit, mechanical arm and sensor. I started by looking at the examples and modifyed them to fit my project. I used "dual sensor" from the library Adafruit_VL53LOX and I added one sensor. I also used the example "servo" from the library Adafruit_PWMServoDriver. After I tried all those separately I started writing my own code using parts of the examples and defining my own functions.
+            <p> To write my arduino code I divided my project into its main 3 parts: stepper motors circuit, mechanical arm and sensor. I started by looking at the examples and modified them to fit my project. I used "dual sensor" from the library Adafruit_VL53LOX and I added one sensor. I also used the example "servo" from the library Adafruit_PWMServoDriver. After I tried all those separately I started writing my own code using parts of the examples and defining my own functions.
            <p> This is the final version of my arduino code: </p>
            <pre>
             <code class="language_arduino">
@@ -367,7 +367,7 @@ int last_turn_dir = 0; // variable for scanning right=0 left=1
 int wall_warning = 0; // multi level wall warning . to avoid false alarms
 
 // Laser Sensors variables
-// this holds the measurement (not calibrated I have found out that there is an ofset in the meurments)
+// this holds the measurement (not calibrated I have found out that there is an offset in the measurements)
 VL53L0X_RangingMeasurementData_t measure1;
 VL53L0X_RangingMeasurementData_t measure2;
 VL53L0X_RangingMeasurementData_t measure3;
@@ -513,7 +513,7 @@ void init_ServoDriver() { //initialize servo driver
      you get the PWM update frequency you're expecting!
      The int.osc. for the PCA9685 chip is a range between about 23-27MHz and
      is used for calculating things like writeMicroseconds()
-     Analog servos run at ~50 Hz updates, It is importaint to use an
+     Analog servos run at ~50 Hz updates, It is important to use an
      oscilloscope in setting the int.osc frequency for the I2C PCA9685 chip.
      1) Attach the oscilloscope to one of the PWM signal pins and ground on
         the I2C PCA9685 chip you are setting the value for.
@@ -561,7 +561,7 @@ void GotoServoPos(int servoindex, int angle) //gradually go to to an angle
 }
 
 
-void Servo_Idle() { // position of the mecanical arm when is not picking
+void Servo_Idle() { // position of the mechanical arm when is not picking
 
   SetServoPos(0, 90);
   SetServoPos(1, 90);

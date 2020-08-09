@@ -1,7 +1,7 @@
 <!DOCTYPE html>
   <html>
   <head>
-    <title>  assignment8  </title>
+    <title>  assignment9  </title>
 
     <meta charset="utf-8">
              <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -93,7 +93,7 @@ void loop() // Send "HIGH" signals for 5 seconds every 5 seconds
 
 int input_pin;
 void setup() {
-  pinMode (7,INPUT); // set pin 7 as input to recive signals from the ESP32 board
+  pinMode (7,INPUT); // set pin 7 as input to receive signals from the ESP32 board
   pinMode (3, OUTPUT); // set pin 3 as output to light the led
   
 
@@ -110,14 +110,14 @@ void loop() {
 }
           </code>
         </pre>
-        <p> When I saw that the wire connection was working I tried to connect my ESP32 to the WiFi and try to light the LED in this way. <br> I uploaded the SimpleWiFiSever example to my ESP32. This program sends high signal to pin 5 when you press "click here to turn the LED on" and low signal when you press "click here to turn the LED off" so I uploaded the same program as before to my Metro, infact this programs turns on the LED when the board receives "high" from pin 7 (the signal from the other board) and turns it off when pin 7 recives "low". <br>This is my circuit working: </p> 
+        <p> When I saw that the wire connection was working I tried to connect my ESP32 to the WiFi and try to light the LED in this way. <br> I uploaded the SimpleWiFiSever example to my ESP32. This program sends high signal to pin 5 when you press "click here to turn the LED on" and low signal when you press "click here to turn the LED off" so I uploaded the same program as before to my Metro, in fact this programs turns on the LED when the board receives "high" from pin 7 (the signal from the other board) and turns it off when pin 7 receives "low". <br>This is my circuit working: </p> 
 
 
 
  <video controls style="width:50%; min-width:300px; align-items: center;" >
             <source src="./assign8/wifi.mov" type="video/mp4">
 </video> 
- <p> I was now ready to control my litte car through WiFi. I changed the ESP32 example program to make the web page show the right commands: <br>  This is my code: </p>
+ <p> I was now ready to control my little car through WiFi. I changed the ESP32 example program to make the web page show the right commands: <br>  This is my code: </p>
 
  
           <pre style="margin: 4%; border-style:solid; border-color: gray; border-width:thin; border-radius: 20px">
@@ -261,7 +261,7 @@ void setup() {
   myStepper1.setSpeed(80);
    myStepper2.setSpeed(80);
   Serial.begin(9600);
-  pinMode (7,INPUT); // set pin 7 as input to recive signals from the ESP32 board
+  pinMode (7,INPUT); // set pin 7 as input to receive signals from the ESP32 board
   pinMode (3, OUTPUT); // set pin 3 as output to light the led
 }
 
